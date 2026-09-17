@@ -1,0 +1,16 @@
+# OS Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Temporary & Log files
+*.log
+*.tmp
+.tmp/
+temp/
+
+# Editor / Antigravity caches
+.gemini/
+.antigravity/

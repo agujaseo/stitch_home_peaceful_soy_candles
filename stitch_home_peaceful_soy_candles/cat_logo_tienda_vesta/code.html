@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-container-highest": "#ebe0db",
+        "surface-bright": "#fff8f5",
+        "tertiary-fixed": "#ffddb9",
+        "inverse-on-surface": "#f9efea",
+        "error-container": "#ffdad6",
+        "on-tertiary-fixed-variant": "#5a4227",
+        "inverse-primary": "#edbca2",
+        "on-secondary": "#ffffff",
+        "on-primary-fixed-variant": "#613f2b",
+        "secondary": "#7b5641",
+        "on-secondary-fixed": "#2e1505",
+        "surface-variant": "#ebe0db",
+        "on-surface-variant": "#50443e",
+        "secondary-fixed": "#ffdbc9",
+        "on-primary": "#ffffff",
+        "surface-dim": "#e2d8d3",
+        "outline": "#82746d",
+        "surface-container": "#f6ece7",
+        "on-tertiary": "#ffffff",
+        "outline-variant": "#d4c3bb",
+        "tertiary-fixed-dim": "#e3c19d",
+        "on-primary-container": "#fffaf9",
+        "on-secondary-fixed-variant": "#613f2b",
+        "surface": "#fff8f5",
+        "surface-tint": "#7b5641",
+        "error": "#ba1a1a",
+        "background": "#fff8f5",
+        "on-error-container": "#93000a",
+        "primary-fixed": "#ffdbc9",
+        "inverse-surface": "#352f2c",
+        "primary": "#78533e",
+        "secondary-fixed-dim": "#edbca2",
+        "on-surface": "#1f1b18",
+        "on-background": "#1f1b18",
+        "on-error": "#ffffff",
+        "on-primary-fixed": "#2e1505",
+        "on-tertiary-fixed": "#291802",
+        "tertiary-container": "#8b6f50",
+        "surface-container-low": "#fcf2ec",
+        "tertiary": "#70573a",
+        "primary-container": "#936b55",
+        "primary-fixed-dim": "#edbca2",
+        "surface-container-high": "#f0e6e1",
+        "secondary-container": "#ffcdb2",
+        "on-tertiary-container": "#fffaff",
+        "on-secondary-container": "#7a5540",
+        "surface-container-lowest": "#ffffff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "margin-mobile": "1.25rem",
+        "space-lg": "2.25rem",
+        "space-sm": "0.75rem",
+        "gutter-mobile": "1rem",
+        "space-xs": "0.375rem",
+        "space-md": "1.25rem",
+        "margin": "3rem",
+        "space-xl": "4rem",
+        "gutter": "1.5rem"
+      },
+      "fontFamily": {
+        "headline-lg": ["Playfair Display"],
+        "headline-lg-mobile": ["Playfair Display"],
+        "body-md": ["Plus Jakarta Sans"],
+        "display-lg-mobile": ["Playfair Display"],
+        "display-lg": ["Playfair Display"],
+        "body-sm": ["Plus Jakarta Sans"],
+        "label-sm": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"],
+        "body-lg": ["Plus Jakarta Sans"],
+        "headline-md": ["Playfair Display"],
+        "headline-sm": ["Playfair Display"]
+      },
+      "fontSize": {
+        "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+        "display-lg-mobile": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+        "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+        "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "600"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600"}],
+        "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+        "headline-md": ["26px", {"lineHeight": "34px", "letterSpacing": "0em", "fontWeight": "500"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,38,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-sm"><img alt="Vesta Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U_QEz4ZHk1IOgT8PDPcEMhcozPFBlQqLqvwCT9-ma4eZUli7TUYNCIqXdpEb4G8PQ9ix1Vn7Jh9hHL1gDwStBClxbPaQckaZYYKFKt1UpQJxJej-SSC5-Alr6n8X9FWkzaQUHOpiCc75vdXlYQ9FDOdcn7FgQvRrzPzKei_XGo5rySbaQM8mbyDGDblZuEFbbOZlANc1QeQy3FAeBsnM6QQrcKgZVD3dBe3p48iKg3scNvJ04Oi0uoNiE"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-wider text-on-surface uppercase">VESTA</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">VELAS ARTESANALES</span></div></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#">Inicio</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="manifiesto" href="#">Manifiesto</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="catalogo" href="#">Catálogo</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="pedidos" href="#">Pedidos</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="contacto" href="#">Contacto</a></nav><div class="flex items-center gap-space-md"><button aria-label="Buscar" class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="relative flex items-center justify-center"><button aria-label="Carrito de compra" class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center" type="button"><span class="material-symbols-outlined text-[20px]">local_mall</span></button><span class="absolute -top-1.5 -right-2 bg-primary text-on-primary font-label-sm text-label-sm px-1 rounded-full leading-none flex items-center justify-center min-w-[16px] h-4">0</span></div><a class="hidden sm:inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-all shadow-[0_2px_8px_rgba(120,83,62,0.12)]" data-path="catalogo" href="#">Comprar</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Cabecera del Catálogo & Filosofía Olfativa -->
+<section class="w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin pt-space-lg pb-space-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="max-w-2xl">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary inline-block animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">Alquimia Botánica · Cera de Soja 100% Pura</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Colecciones Botánicas</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs font-light max-w-xl">
+          Cada vela ha sido diseñada para inducir un estado anímico particular: serenidad, concentración o reposo profundo. Vertidas una a una en nuestro taller.
+        </p>
+</div>
+<!-- Métricas del Taller -->
+<div class="flex items-center gap-space-md bg-surface-container-low p-space-sm rounded-xl self-start md:self-auto shadow-sm">
+<div class="flex flex-col px-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-outline">Combustión lenta</span>
+<span class="font-headline-sm text-headline-sm text-primary font-medium">45-75 h</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/40"></div>
+<div class="flex flex-col px-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-outline">Pavirico orgánico</span>
+<span class="font-headline-sm text-headline-sm text-primary font-medium">Algodón</span>
+</div>
+</div>
+</div>
+<!-- Filtros de Colección / Pestañas de Estado -->
+<div class="mt-space-lg flex items-center justify-between gap-space-sm overflow-x-auto pb-space-xs scrollbar-none">
+<div class="flex items-center gap-space-xs" id="filter-container">
+<button class="filter-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-primary text-on-primary shadow-sm" data-filter="all" type="button">
+          Todas las obras
+        </button>
+<button class="filter-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest" data-filter="serenidad" type="button">
+          Serie Serenidad
+        </button>
+<button class="filter-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest" data-filter="bosque" type="button">
+          Serie Bosque &amp; Tierra
+        </button>
+<button class="filter-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest" data-filter="citrica" type="button">
+          Serie Cítrica &amp; Despertar
+        </button>
+<button class="filter-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest" data-filter="edicion" type="button">
+          Ediciones de Estación
+        </button>
+</div>
+<div class="hidden lg:flex items-center gap-space-xs text-outline font-label-sm text-label-sm uppercase tracking-wider shrink-0">
+<span class="material-symbols-outlined text-[16px] text-tertiary">spa</span>
+<span>6 Formulaciones en catálogo</span>
+</div>
+</div>
+</section>
+<!-- Grid de Productos (6 Piezas Maestras) -->
+<section class="w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="products-grid">
+<!-- Producto 1: Niebla & Salvia Blanca -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden" data-category="serenidad">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A minimalist aesthetic candle in frosted textured porcelain vessel resting on a raw linen cloth with sprigs of dried white sage and lavender nearby. Soft diffused morning window light, tranquil atmosphere, warm neutral sand and beige tones, subtle steam or wisp of fragrant air, high resolution product photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbydB4f6nu-2v7aECHwJJRPw68Hvm-qpNLHXo8BW4l_og3CJQa1AVYncJloY4XFIZEmV_8DdX_AYlNmXxOL9YSwoRyW4p5-oCUxqmk0hK2g_x4kWmwcyzAAlhqGKFskHS3wIWI5aXXC6IRrho8WgVw8sNvr9D_Yx5aJEnWLB8HkAG6uUSvOX5gwn87CVjtJD0oc8GC54zmAn0ce6h1lEFZwZzYiwnsNLlis2zSIoWdarw08yt88KKD"/>
+<div class="absolute top-4 left-4 bg-surface-bright/90 backdrop-blur-md px-space-xs py-1 rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary font-medium">Serie Serenidad</span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/80 hover:bg-surface backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm uppercase tracking-widest mb-1">
+<span>220g · 50 horas de llama</span>
+<span class="text-tertiary">Vaso Porcelana</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Niebla &amp; Salvia Blanca</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+              Una oda al rocío matutino sobre hojas silvestres. Clarifica la mente y aplaca el pulso tras jornadas extenuantes.
+            </p>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low/60 rounded-lg p-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block mb-0.5">Acorde olfativo:</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Salvia blanca · Lavanda silvestre · Musgo blanco</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Aportación</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$28.00</span>
+</div>
+<button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-all shadow-sm" onclick="addToCart(this, 'Niebla &amp; Salvia Blanca')" type="button">
+<span class="material-symbols-outlined text-[16px]">local_mall</span>
+<span>Añadir</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Producto 2: Hogar de Cedro & Vainilla Tostada -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden" data-category="bosque">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Handmade soy wax candle in an earthen terracotta ceramic jar sitting on a dark oak wooden tabletop beside aged book pages and small cinnamon bark pieces. Amber warm fireplace glow, deep shadows, cozy contemplative interior, earthy warm beige and umber tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz5KrNim8IAKOvfwNgH9LTxbiIBApMtnVjKz_vHfKTyx33O5b_Iegk40GV9PGHtJkFy8F1oaZz1qhqmQswdq4tzT4N6oLr9KKOt9U8-uIAEAkiwwukNUmw_VZx_JpT2IumcNo5nCHcdFJaTP91owWVhQf44St-8XBldyMZvpBcuDsP7aofh3xxpNlAPx26yUzM1u1jRDPKtvyrZneNiHz5DlggyS_q1oAONG05jdvk_hJYSTXnkYi4"/>
+<div class="absolute top-4 left-4 bg-surface-bright/90 backdrop-blur-md px-space-xs py-1 rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-medium">Serie Bosque &amp; Tierra</span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/80 hover:bg-surface backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm uppercase tracking-widest mb-1">
+<span>280g · 65 horas de llama</span>
+<span class="text-tertiary">Arcilla Torneada</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Hogar de Cedro &amp; Vainilla Tostada</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+              Evoca una biblioteca silenciosa y leños encendidos. Aporta solidez, abrigo térmico y recogimiento doméstico.
+            </p>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low/60 rounded-lg p-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block mb-0.5">Acorde olfativo:</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Cedro de Virginia · Madera de roble · Ámbar cálido</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Aportación</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$32.00</span>
+</div>
+<button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-all shadow-sm" onclick="addToCart(this, 'Hogar de Cedro &amp; Vainilla Tostada')" type="button">
+<span class="material-symbols-outlined text-[16px]">local_mall</span>
+<span>Añadir</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Producto 3: Amanecer de Higo & Bergamota -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden" data-category="citrica">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Artisanal soy candle in an amber apothecary glass jar lit by luminous Mediterranean sunlight, beside fresh sliced green figs, citrus peels and tea leaves on a travertine stone pedestal. Luminous golden hour, calm organic luxury, editorial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaA9bPTZOGmcnlwldxReyIAXAKX4h0zzh7DY8jTuoRg8p6Yo30w9YjtG-SETlXjWZsc2OdvZCReF2oJSObXpB0lhiVJ5TmYDVWABJzKLDt8E6NVEJBdGZP3SU_yXqkzn3A5muSx-5c4xzZHJtMXKIqviNXcGJyLGePB7_29yWDmPKyrXGLs_PQwrWGHZFcrcyA_kojvb6ohvBIGwFw-7rKMqslXOGCToeo_NMEqU6dje_kCCOV8rT3"/>
+<div class="absolute top-4 left-4 bg-surface-bright/90 backdrop-blur-md px-space-xs py-1 rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary font-medium">Serie Cítrica &amp; Despertar</span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/80 hover:bg-surface backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm uppercase tracking-widest mb-1">
+<span>220g · 50 horas de llama</span>
+<span class="text-tertiary">Ámbar Soplado</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Amanecer de Higo &amp; Bergamota</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+              Chispeante y vegetal como las primeras horas del estío. Disipa la fatiga y despierta la frescura de los sentidos.
+            </p>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low/60 rounded-lg p-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block mb-0.5">Acorde olfativo:</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Higo dulce · Cáscara de bergamota · Té verde</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Aportación</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$29.00</span>
+</div>
+<button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-all shadow-sm" onclick="addToCart(this, 'Amanecer de Higo &amp; Bergamota')" type="button">
+<span class="material-symbols-outlined text-[16px]">local_mall</span>
+<span>Añadir</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Producto 4: Noche de Cardamomo & Sándalo -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden" data-category="bosque">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Luxury soy candle in a dark charcoal stoneware vessel on a raw plaster surface, surrounded by cardamom pods and crushed sandalwood chips. Moody twilight atmosphere, tactile wabi-sabi textures, soft warm candlelight glow casting delicate organic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN1Nsewcp5LeGoPtjsbBfL5Brg881FRCTbozloWirSxBVgdx_wnx8KU5Swt-VtQYDctT-QrDaf8sMw5oOmjI4USOPz8aeDxH_8xegTHNDRkkdWayHF90vrVFRQU1v41DXXyf6uNDq6zrOS-PvIPvj9it5X4JvvZ_smWwiIp43JBzbttSIgdOsdduDtzoArce6aEtzV2iY3drbG8d4VFT3ffh3mSOnSTDBu062VonDr27r6DGJrPpFB"/>
+<div class="absolute top-4 left-4 bg-surface-bright/90 backdrop-blur-md px-space-xs py-1 rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-medium">Serie Bosque &amp; Tierra</span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/80 hover:bg-surface backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm uppercase tracking-widest mb-1">
+<span>300g · 70 horas de llama</span>
+<span class="text-tertiary">Gres Mineral</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Noche de Cardamomo &amp; Sándalo</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+              Compleja, especiada y envolvente. Crea una intimidad nocturna perfecta para la introspección y la música en calma.
+            </p>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low/60 rounded-lg p-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block mb-0.5">Acorde olfativo:</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Sándalo de Mysore · Cardamomo · Canela sutil</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Aportación</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$34.00</span>
+</div>
+<button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-all shadow-sm" onclick="addToCart(this, 'Noche de Cardamomo &amp; Sándalo')" type="button">
+<span class="material-symbols-outlined text-[16px]">local_mall</span>
+<span>Añadir</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Producto 5: Jardín de Eucalipto & Menta Polar -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden" data-category="serenidad">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Pure white soy candle in a hand-dipped glazed ceramic container surrounded by botanical eucalyptus branches and fresh spearmint leaves on pure unbleached linen fabric. Bright natural light, botanical spa feeling, airy clean serene atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC60m8vwNv6kstDX4uh0MH26iTk7mViV141BUOdC2AAqE1MYeSDVdiAIkpg0UbcDEnDlVhN_gcjpqMhiWdo5eRQvE1tmjYHRy8onzklPYHYx4SHcNBRmFiqvYTot1Jr0d44qU4A5qqjQWnen5_LSkC7JRHLj6_x24kExXuqZGeFOX2HSvxBiAf09gd96wrxorMySYrRPVTP3W8P1hZsTOLxZ6G7cU1x3dFaYIZrRRaV8u65pZYBY7zS"/>
+<div class="absolute top-4 left-4 bg-surface-bright/90 backdrop-blur-md px-space-xs py-1 rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary font-medium">Serie Serenidad</span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/80 hover:bg-surface backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm uppercase tracking-widest mb-1">
+<span>200g · 45 horas de llama</span>
+<span class="text-tertiary">Cerámica Esmaltada</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Jardín de Eucalipto &amp; Menta Polar</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+              Un soplo purificante de aire montañoso. Abre las vías respiratorias y renueva por completo la energía de la estancia.
+            </p>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low/60 rounded-lg p-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block mb-0.5">Acorde olfativo:</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Eucalipto medicinal · Menta dulce · Rocío matinal</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Aportación</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$26.00</span>
+</div>
+<button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-all shadow-sm" onclick="addToCart(this, 'Jardín de Eucalipto &amp; Menta Polar')" type="button">
+<span class="material-symbols-outlined text-[16px]">local_mall</span>
+<span>Añadir</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Producto 6: Reserva de Botica: Resina de Mirra (Edición Limitada) -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden relative" data-category="edicion">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Special edition candle in smoked dark obsidian glass container labeled with golden leaf typography, sitting next to translucent golden myrrh resin tear crystals and raw cedar wood chips. Moody sacred temple atmosphere, warm flickering flame reflections, luxury craft aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvJ-r1B4Tc7YOyPbcGLIOQv9eo20NJCuj87hi7ADscVnp_l3XhhUpSRD-GEbn0_OhNK6GePcQA0LOG4xmJ9FR9vYFo24izMa_TGkGzjvrwhFznNKpe-p8sVdX333KJV5Nla625acK-JpU30rQGkr8NnMcGYu96WuhYcCbw8ck4gLi8Xb4D9fZrs79mvnILwL1AOszjO0dZQo8ke1R5ZUiDn612S0e3tg80_zz5A14dpeRmoI5l_ej6"/>
+<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary px-space-xs py-1 rounded-lg shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold">Edición Limitada · Lote No. 04</span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/80 hover:bg-surface backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm uppercase tracking-widest mb-1">
+<span>300g · 75 horas de llama</span>
+<span class="text-tertiary">Vidrio Ahumado</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Reserva de Botica: Resina de Mirra</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+              Inspirada en ungüentos ancestrales. Resinas puras maceradas en frío para crear un templo de meditación silenciosa.
+            </p>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low/60 rounded-lg p-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block mb-0.5">Acorde olfativo:</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Mirra ancestral · Resina de benjuí · Cedro ahumado</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Aportación</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$38.00</span>
+</div>
+<button class="inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-all shadow-sm" onclick="addToCart(this, 'Resina de Mirra')" type="button">
+<span class="material-symbols-outlined text-[16px]">local_mall</span>
+<span>Añadir</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Guía Interactiva de Elección de Aromas (Bespoke Selector) -->
+<section class="w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin my-space-lg">
+<div class="bg-surface-container p-space-md md:p-space-lg rounded-xl shadow-sm">
+<div class="max-w-xl mx-auto text-center mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Brújula Olfativa</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1">¿Qué atmósfera buscas crear hoy?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Selecciona la intención para sintonizar tu hogar con la vibración idónea.
+        </p>
+</div>
+<!-- Selector de Intenciones Interactivo -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Intención 1 -->
+<div class="atmosphere-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between group" id="atm-niebla" onclick="selectAtmosphere('niebla')">
+<div>
+<div class="w-12 h-12 rounded-full bg-secondary-container/60 flex items-center justify-center text-primary mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">self_improvement</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase text-tertiary tracking-wider font-semibold">Intención de Calma</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Para Relajar y Meditar</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+              Baja la frecuencia mental, suaviza la respiración y genera un remanso para el fin de la jornada.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-primary font-label-md text-label-md uppercase tracking-wider">
+<span>Niebla &amp; Salvia</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Intención 2 -->
+<div class="atmosphere-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between group" id="atm-cedro" onclick="selectAtmosphere('cedro')">
+<div>
+<div class="w-12 h-12 rounded-full bg-secondary-container/60 flex items-center justify-center text-primary mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase text-tertiary tracking-wider font-semibold">Intención de Foco</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Para Leer y Concentrarse</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+              Una base amaderada que asienta las ideas, reduce el ruido exterior y acompaña el estudio reflexivo.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-primary font-label-md text-label-md uppercase tracking-wider">
+<span>Hogar de Cedro</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Intención 3 -->
+<div class="atmosphere-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between group" id="atm-higo" onclick="selectAtmosphere('higo')">
+<div>
+<div class="w-12 h-12 rounded-full bg-secondary-container/60 flex items-center justify-center text-primary mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">wb_twilight</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase text-tertiary tracking-wider font-semibold">Intención de Vitalidad</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Para Renovar Energías</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+              Matices cítricos y verdes que oxigenan la habitación y revitalizan el espíritu al despertar.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-primary font-label-md text-label-md uppercase tracking-wider">
+<span>Amanecer de Higo</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Reseña del Alquimista -->
+<div class="mt-space-md p-space-md bg-surface-container-highest/60 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-space-sm transition-all duration-300" id="recommendation-box">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">light_mode</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider block">Recomendación Personalizada</span>
+<span class="font-headline-sm text-headline-sm text-on-surface" id="recommendation-text">Explora las 3 atmósferas y descubre tu fórmula complementaria</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-space-md py-space-xs rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-secondary transition-colors whitespace-nowrap" onclick="scrollToGrid()" type="button">
+          Ver Fórmulas
+        </button>
+</div>
+</div>
+</section>
+<!-- Pilar de Compromiso & Envíos Sostenibles -->
+<section class="w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Valor 1 -->
+<div class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[20px]">co2</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Envíos Neutros en Carbono</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Calculamos y compensamos la huella ecológica de cada traslado reforestando bosques autóctonos.
+          </p>
+</div>
+</div>
+<!-- Valor 2 -->
+<div class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[20px]">recycling</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Packaging 100% Sin Plástico</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Cajas de cartón kraft prensado, viruta de papel vegetal y cintas de lino orgánico compostable.
+          </p>
+</div>
+</div>
+<!-- Valor 3 -->
+<div class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Entrega Silenciosa 24-48h</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Embalado protector a mano y servicio de mensajería respetuosa con seguimiento en tiempo real.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Banner de Consulta Personalizada / Taller -->
+<section class="w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin pb-space-xl">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-md md:p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Decoración de fondo tenue -->
+<div class="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-primary/5 blur-2xl pointer-events-none"></div>
+<div class="max-w-xl z-10">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Atención de Botica</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">¿Dudas sobre intensidades o maridaje de aromas?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 font-light">
+          Escríbenos directamente al atelier. Nuestro artesano botánico te asesorará personalmente según las dimensiones y la ventilación de tu estancia.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-sm z-10 w-full md:w-auto">
+<a class="w-full sm:w-auto text-center inline-flex items-center justify-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-colors shadow-sm" data-path="contacto" href="#">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Consultar al Artesano</span>
+</a>
+<a class="w-full sm:w-auto text-center inline-flex items-center justify-center font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg text-on-surface hover:text-primary transition-colors" data-path="guia-de-cuidado-de-velas" href="#">
+<span>Guía de encendido</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Filtro reactivo por categoría
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const productCards = document.querySelectorAll('.product-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Activar estilo botón
+      filterButtons.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+      });
+      btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+
+      const filter = btn.getAttribute('data-filter');
+
+      productCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+    });
+  });
+
+  // Microinteracción para selección de atmósfera
+  function selectAtmosphere(kind) {
+    const cards = document.querySelectorAll('.atmosphere-card');
+    cards.forEach(c => c.classList.remove('ring-2', 'ring-primary', 'bg-surface-container-low'));
+    
+    const target = document.getElementById('atm-' + kind);
+    if(target) {
+      target.classList.add('bg-surface-container-low');
+    }
+
+    const recText = document.getElementById('recommendation-text');
+    if (kind === 'niebla') {
+      recText.innerText = 'Tu combinación perfecta: "Niebla & Salvia Blanca" acompañada de infusión nocturna.';
+    } else if (kind === 'cedro') {
+      recText.innerText = 'Tu combinación perfecta: "Hogar de Cedro & Vainilla" al crepúsculo con luz focal.';
+    } else if (kind === 'higo') {
+      recText.innerText = 'Tu combinación perfecta: "Amanecer de Higo & Bergamota" al iniciar tu mañana.';
+    }
+  }
+
+  function scrollToGrid() {
+    const grid = document.getElementById('products-grid');
+    if (grid) {
+      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // Microinteracción de añadir al carrito
+  function addToCart(button, productName) {
+    const originalText = button.innerHTML;
+    button.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Añadido</span>';
+    button.classList.add('bg-secondary');
+    
+    // Incrementar badge en el header si existe
+    const badge = document.querySelector('header span.bg-primary');
+    if (badge) {
+      const current = parseInt(badge.textContent || '0', 10);
+      badge.textContent = current + 1;
+    }
+
+    setTimeout(() => {
+      button.innerHTML = originalText;
+      button.classList.remove('bg-secondary');
+    }, 1800);
+  }
+</script></main><footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_-1px_6px_rgba(43,38,35,0.02)]"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter pb-space-lg"><div class="md:col-span-4 flex flex-col gap-space-sm pr-0 md:pr-space-md"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm tracking-wider text-on-surface uppercase">VESTA</span><span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">· ATELIER</span></div><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Velas vertidas pacientemente en cera de soja pura y esencias botánicas, honrando el tiempo pausado, el recogimiento del hogar y el silencio consciente en cada ritual cotidiano.</p><span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest">Hecho a fuego lento · Grasse &amp; Madrid</span></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Explorar el Taller</span><div class="grid grid-cols-2 gap-space-xs"><div class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#">Inicio</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="manifiesto" href="#">Manifiesto</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="catalogo" href="#">Catálogo</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="pedidos" href="#">Pedidos especiales</a></div><div class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contacto" href="#">Contacto</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="preguntas-frecuentes" href="#">Preguntas frecuentes</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="guia-de-cuidado-de-velas" href="#">Guía de cuidado</a></div></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Suscríbete a nuestro ritual</span><p class="font-body-sm text-body-sm text-on-surface-variant">Reflexiones sobre vida sosegada, notas de taller y un 10% de cortesía en tu primera adquisición.</p><form class="flex flex-col sm:flex-row gap-space-xs mt-space-xs"><input class="bg-surface font-body-sm text-body-sm text-on-surface px-space-md py-space-xs rounded-lg placeholder-outline focus:outline-none focus:ring-1 focus:ring-primary flex-1" placeholder="Tu correo electrónico" required="" type="email"/><button class="bg-primary hover:bg-secondary text-on-primary hover:text-on-secondary font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-colors whitespace-nowrap" type="submit">Suscribir</button></form></div></div><div class="pt-space-md mt-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm text-center sm:text-left"><p class="font-body-sm text-body-sm text-outline">© 2024 VESTA · Hecho a mano con cera de soja 100% natural</p><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm text-outline hover:text-on-surface transition-colors" data-path="terminos-y-privacidad" href="#">Términos y Privacidad</a></div></div></div></footer></body></html>

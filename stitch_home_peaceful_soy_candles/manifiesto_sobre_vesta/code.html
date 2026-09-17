@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-container-highest": "#ebe0db",
+        "surface-bright": "#fff8f5",
+        "tertiary-fixed": "#ffddb9",
+        "inverse-on-surface": "#f9efea",
+        "error-container": "#ffdad6",
+        "on-tertiary-fixed-variant": "#5a4227",
+        "inverse-primary": "#edbca2",
+        "on-secondary": "#ffffff",
+        "on-primary-fixed-variant": "#613f2b",
+        "secondary": "#7b5641",
+        "on-secondary-fixed": "#2e1505",
+        "surface-variant": "#ebe0db",
+        "on-surface-variant": "#50443e",
+        "secondary-fixed": "#ffdbc9",
+        "on-primary": "#ffffff",
+        "surface-dim": "#e2d8d3",
+        "outline": "#82746d",
+        "surface-container": "#f6ece7",
+        "on-tertiary": "#ffffff",
+        "outline-variant": "#d4c3bb",
+        "tertiary-fixed-dim": "#e3c19d",
+        "on-primary-container": "#fffaf9",
+        "on-secondary-fixed-variant": "#613f2b",
+        "surface": "#fff8f5",
+        "surface-tint": "#7b5641",
+        "error": "#ba1a1a",
+        "background": "#fff8f5",
+        "on-error-container": "#93000a",
+        "primary-fixed": "#ffdbc9",
+        "inverse-surface": "#352f2c",
+        "primary": "#78533e",
+        "secondary-fixed-dim": "#edbca2",
+        "on-surface": "#1f1b18",
+        "on-background": "#1f1b18",
+        "on-error": "#ffffff",
+        "on-primary-fixed": "#2e1505",
+        "on-tertiary-fixed": "#291802",
+        "tertiary-container": "#8b6f50",
+        "surface-container-low": "#fcf2ec",
+        "tertiary": "#70573a",
+        "primary-container": "#936b55",
+        "primary-fixed-dim": "#edbca2",
+        "surface-container-high": "#f0e6e1",
+        "secondary-container": "#ffcdb2",
+        "on-tertiary-container": "#fffaff",
+        "on-secondary-container": "#7a5540",
+        "surface-container-lowest": "#ffffff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "margin-mobile": "1.25rem",
+        "space-lg": "2.25rem",
+        "space-sm": "0.75rem",
+        "gutter-mobile": "1rem",
+        "space-xs": "0.375rem",
+        "space-md": "1.25rem",
+        "margin": "3rem",
+        "space-xl": "4rem",
+        "gutter": "1.5rem"
+      },
+      "fontFamily": {
+        "headline-lg": ["Playfair Display"],
+        "headline-lg-mobile": ["Playfair Display"],
+        "body-md": ["Plus Jakarta Sans"],
+        "display-lg-mobile": ["Playfair Display"],
+        "display-lg": ["Playfair Display"],
+        "body-sm": ["Plus Jakarta Sans"],
+        "label-sm": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"],
+        "body-lg": ["Plus Jakarta Sans"],
+        "headline-md": ["Playfair Display"],
+        "headline-sm": ["Playfair Display"]
+      },
+      "fontSize": {
+        "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+        "display-lg-mobile": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+        "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+        "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "600"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600"}],
+        "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+        "headline-md": ["26px", {"lineHeight": "34px", "letterSpacing": "0em", "fontWeight": "500"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,38,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-sm"><img alt="Vesta Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U_QEz4ZHk1IOgT8PDPcEMhcozPFBlQqLqvwCT9-ma4eZUli7TUYNCIqXdpEb4G8PQ9ix1Vn7Jh9hHL1gDwStBClxbPaQckaZYYKFKt1UpQJxJej-SSC5-Alr6n8X9FWkzaQUHOpiCc75vdXlYQ9FDOdcn7FgQvRrzPzKei_XGo5rySbaQM8mbyDGDblZuEFbbOZlANc1QeQy3FAeBsnM6QQrcKgZVD3dBe3p48iKg3scNvJ04Oi0uoNiE"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-wider text-on-surface uppercase">VESTA</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">VELAS ARTESANALES</span></div></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#">Inicio</a><a aria-current="page" class="uppercase tracking-wider transition-colors text-primary font-bold" data-path="manifiesto" href="#">Manifiesto</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="catalogo" href="#">Catálogo</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="pedidos" href="#">Pedidos</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="contacto" href="#">Contacto</a></nav><div class="flex items-center gap-space-md"><button aria-label="Buscar" class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="relative flex items-center justify-center"><button aria-label="Carrito de compra" class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center" type="button"><span class="material-symbols-outlined text-[20px]">local_mall</span></button><span class="absolute -top-1.5 -right-2 bg-primary text-on-primary font-label-sm text-label-sm px-1 rounded-full leading-none flex items-center justify-center min-w-[16px] h-4">0</span></div><a class="hidden sm:inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-all shadow-[0_2px_8px_rgba(120,83,62,0.12)]" data-path="catalogo" href="#">Comprar</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Cabecera Editorial & Prólogo Contemplativo -->
+<section class="relative w-full overflow-hidden px-margin-mobile lg:px-margin py-space-xl lg:py-28 bg-surface">
+<div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+<!-- Iconografía Simbólica Central Vesta -->
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-md shadow-sm">
+<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M12 2C12 2 7 8.5 7 13.5C7 16.5376 9.23858 19 12 19C14.7614 19 17 16.5376 17 13.5C17 8.5 12 2 12 2Z" fill="currentColor" fill-opacity="0.2"></path>
+<path d="M12 7C12 7 9.5 10.5 9.5 13C9.5 14.3807 10.6193 15.5 12 15.5C13.3807 15.5 14.5 14.3807 14.5 13C14.5 10.5 12 7 12 7Z" fill="currentColor"></path>
+<path d="M5 21L12 23L19 21" stroke-linecap="round"></path>
+</svg>
+</div>
+<span class="font-label-md text-label-md uppercase tracking-[0.25em] text-tertiary mb-space-sm">
+        Nuestra historia y propósito
+      </span>
+<h1 class="font-display-lg text-display-lg text-on-surface max-w-4xl tracking-tight leading-[1.15] mb-space-md">
+        El Manifiesto de Vesta: <span class="italic font-normal text-primary">Belleza pausada</span> en un mundo apresurado
+      </h1>
+<div class="w-16 h-0.5 bg-secondary-fixed-dim rounded-full my-space-sm"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl font-light leading-relaxed mt-space-sm">
+        “Vesta nace del anhelo de devolverle al fuego su significado sagrado: el punto de encuentro, el calor del hogar y el recordatorio de que la calma se cultiva con intención.”
+      </p>
+<!-- Metadatos de Manifiesto en estilo editorial -->
+<div class="flex flex-wrap items-center justify-center gap-space-md mt-space-lg text-on-surface-variant/80 font-label-sm text-label-sm uppercase tracking-widest">
+<span>Taller Artesanal Nº 04</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span>Cera Pura de Soja</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span>Madrid &amp; Grasse</span>
+</div>
+</div>
+</section>
+<!-- Historia del Taller: Composición Asimétrica -->
+<section class="w-full bg-surface-container-low px-margin-mobile lg:px-margin py-space-xl">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Columna Visual Izquierda -->
+<div class="lg:col-span-6 relative">
+<div class="relative overflow-hidden rounded-xl bg-surface-container shadow-xl aspect-[4/5] max-w-lg mx-auto lg:max-w-none">
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Close-up photograph of an artisanal candle maker pouring warm golden liquid soy wax from an antique ceramic pitcher into an amber glass jar. Soft morning sun streams through a linen-curtained studio window. In the blurred background, apothecary bottles, dried botanical sprigs, and minimalist stoneware tools sit on a raw oak workbench. Warm sepia, ecru, and creamy terracotta hues, fine grain editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxQtflVkUFa5Tr5wAF6s_LBIqoGivuTaOxuhYo70GQoGaQThXytYpxw5D-TR2nBjK1kXXg4gYlh-mF2HLJrx99pkkByuabR7BV2NgL0_P_r1QMFRdAnjkwslvuCEhwIL8c27RzmMXNgGEocH-ekqawevEbG0yeC79JTdPSEK5gIarQs1auA1XxWkkxzbSVD2891u74kbFljyYSjTu3tANJqSCfEBwr2uyOn0Mq0Wx6CBRl_mNd91HT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 p-space-md bg-surface/90 backdrop-blur-md rounded-lg shadow-sm">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">Fundación 2021</p>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-0.5">El despertar de la cera pura</p>
+</div>
+</div>
+<!-- Placa flotante artesanal -->
+<div class="hidden sm:flex absolute -bottom-6 -right-6 bg-surface-container-highest p-space-md rounded-lg shadow-lg flex-col gap-1 max-w-xs z-10">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Temperatura Óptima</span>
+<span class="font-display-lg text-[32px] leading-tight font-light text-on-surface">54.2°C</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Vertido lento para preservar las notas volátiles de los aceites botánicos.</p>
+</div>
+</div>
+<!-- Columna Narrativa Derecha -->
+<div class="lg:col-span-6 flex flex-col justify-center lg:pl-space-lg mt-space-lg lg:mt-0">
+<div class="inline-flex items-center gap-space-xs mb-space-sm">
+<span class="w-8 h-px bg-primary"></span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Origen &amp; Convicción</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-md">
+          Un rechazo sincero al humo sintético, un retorno a la alquimia viva
+        </h2>
+<div class="flex flex-col gap-space-sm font-body-lg text-body-lg text-on-surface-variant font-light leading-relaxed">
+<p>
+            En el invierno de 2021, nuestro taller comenzó con una pregunta incómoda frente a una vela comercial encendida: 
+            <em class="font-normal text-on-surface">¿por qué aquello que encendemos para purificar nuestros hogares libera humo cargado de derivados del petróleo?</em>
+</p>
+<p>
+            Descubrimos que la parafina tradicional, omnipresente en el mercado, satura el aire con toxinas invisibles. Aquel hallazgo nos llevó a investigar durante meses las propiedades curativas de las ceras vegetales cultivadas sin pesticidas y los aceites esenciales puros extraídos con respeto y sin disolventes nocivos.
+          </p>
+<p>
+            Vesta se concibió como un refugio de resistencia frente al consumo vertiginoso. Aquí no existen cadenas de ensamblaje ni moldes automatizados. Cada recipiente es seleccionado a mano, cada mecha de algodón puro y lino se centra con devoción, y cada vertido es una ceremonia que celebra la lentitud como el más preciado de los lujos.
+          </p>
+</div>
+<div class="grid grid-cols-2 gap-space-md pt-space-md mt-space-md bg-surface-container rounded-xl p-space-md">
+<div>
+<span class="font-headline-md text-headline-md text-primary font-normal block">0%</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Parafinas &amp; Ftalatos</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-secondary font-normal block">100%</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Soja No-GMO &amp; Botánica</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Nuestros 5 Principios Fundacionales -->
+<section class="w-full bg-surface px-margin-mobile lg:px-margin py-space-xl lg:py-28">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+<div class="max-w-xl">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-tertiary block mb-space-xs">
+            Nuestros Pilares
+          </span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+            Cinco compromisos innegociables con tu santuario interior
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+          Principios grabados en cera y fuego que guían cada decisión de nuestro taller artesanal desde el primer día.
+        </p>
+</div>
+<!-- Bento Grid de 5 Principios -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-md">
+<!-- Principio 1 -->
+<div class="lg:col-span-7 bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-lg text-headline-lg text-primary/40 font-normal">01</span>
+<span class="material-symbols-outlined text-primary text-2xl">eco</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">
+              Honestidad Absoluta en la Materia
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Cera de soja virgen cosechada de forma ética, no transgénica y completamente biodegradable. Renunciamos a conservantes sintéticos, colorantes artificiales o fijadores químicos: el aroma que inhalas proviene únicamente de la naturaleza intacta.
+            </p>
+</div>
+</div>
+<!-- Principio 2 -->
+<div class="lg:col-span-5 bg-surface-container-high p-space-lg rounded-xl flex flex-col justify-between shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-lg text-headline-lg text-primary/40 font-normal">02</span>
+<span class="material-symbols-outlined text-primary text-2xl">hourglass_empty</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">
+              Reverencia por el Tiempo
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Cada vela Vesta descansa un mínimo estricto de 72 horas en reposo absoluto dentro de nuestro almacén templado. La cera y los aceites maceran en armonía para asegurar una difusión olfativa sedosa y homogénea.
+            </p>
+</div>
+</div>
+<!-- Principio 3 -->
+<div class="lg:col-span-4 bg-surface-container-high p-space-lg rounded-xl flex flex-col justify-between shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-lg text-headline-lg text-primary/40 font-normal">03</span>
+<span class="material-symbols-outlined text-primary text-2xl">spa</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">
+              Aromas que Acompañan, no Invaden
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Formulamos fragancias con una pirámide equilibrada de sándalo, corteza de cedro, resinas y botánicos silvestres para crear atmósferas que susurran sosiego y previenen la fatiga sensorial.
+            </p>
+</div>
+</div>
+<!-- Principio 4 -->
+<div class="lg:col-span-4 bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-lg text-headline-lg text-primary/40 font-normal">04</span>
+<span class="material-symbols-outlined text-primary text-2xl">recycling</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">
+              Economía Circular &amp; Vidrio Reciclado
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Vasos de boticario de vidrio soplado ámbar y gres mate pensados para una segunda vida interminable: como pequeñas macetas para esquejes, joyeros o lapiceros de escritorio.
+            </p>
+</div>
+</div>
+<!-- Principio 5 -->
+<div class="lg:col-span-4 bg-surface-container-highest p-space-lg rounded-xl flex flex-col justify-between shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-lg text-headline-lg text-primary/40 font-normal">05</span>
+<span class="material-symbols-outlined text-primary text-2xl">pan_tool</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">
+              Fabricación Ética &amp; Local
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Lotes estrictamente limitados a 30 unidades por cocción. Hechas de forma consciente y justa, remunerando el saber hacer y fomentando el oficio artesano regional.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- El Proceso Paso a Paso (Infografía Visual y Ritmo Artesano) -->
+<section class="w-full bg-surface-container-low px-margin-mobile lg:px-margin py-space-xl lg:py-28">
+<div class="max-w-7xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-tertiary block mb-space-xs">
+          Rito &amp; Oficio
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-xs">
+          La alquimia pausada en cuatro actos
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Desde la recolección botánica hasta el sello final sobre papel verjurado.
+        </p>
+</div>
+<!-- Secuencia de Pasos -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter relative">
+<!-- Paso 1 -->
+<div class="bg-surface p-space-md rounded-xl shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-300">
+<div>
+<div class="w-full h-44 rounded-lg overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dry botanical herbs, wild lavender, cracked frankincense resin, and cedar wood shavings arranged organically on handmade textured linen cloth. Warm soft natural studio light with deep gentle shadows. Neutral warm earthy tones, editorial macro composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDli7vdwHVAvrfBzfZp7B8r7RtmB_VtbeUn_bjjHd_5d10x1ZNAnjtVjpYZKcanGwgG1RorFv5QlfxLE2ZSvvq6f4v1QZoaqk6L-_VP5CmoP6Pyrj50LTx-hyrSByKFZFa5MT6Sfufc2cgjWmRCFJ21XdoXwso62WT3MIbExHrkfksjeWvkoX8hNEzvBeZtNi94f4L2VxgUPCHKFjLwuM5-OZq7wuthUMv26PfcfuPpQf0LDmYOH0YY"/>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded-full bg-surface-container text-primary font-bold">Paso 01</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Grasse &amp; Origen</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Selección Botánica</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Curación exhaustiva de extractos naturales y esencias de perfumería botánica sin diluciones artificiales.
+            </p>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between text-outline-variant">
+<span class="text-xs tracking-wider uppercase font-label-sm">Pureza Certificada</span>
+<span class="material-symbols-outlined text-lg">nature</span>
+</div>
+</div>
+<!-- Paso 2 -->
+<div class="bg-surface p-space-md rounded-xl shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-300">
+<div>
+<div class="w-full h-44 rounded-lg overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hand pouring molten pale soy wax slowly from a copper pitcher into an amber glass candle vessel fitted with a centered pure organic cotton wick. Warm cozy atelier ambient glow with gentle reflections and steamy warmth. Editorial calm luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzpDvcKRr8VGBHrajseXSWOpzZyaBdH9fjd9-EsmsyFLK41GBDxN9XPDT_9Ai2zfaEJcONYkceW3nS5W3R1H93596anp3ulTIDyfGxFO1Rkhy35ifXuoEXzfQGfQDk3xGU1uX8T0ok0QeqOVd0ffToT30nuv-yKlQU-rH4GriZTkiHcOM04L6DO5CZMDkDEyZOuEzesGDadJ-5ew3ibyn0nSt2-3y5EuChaRAqq9RnRhKx47KWbZ0Z"/>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded-full bg-surface-container text-primary font-bold">Paso 02</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Termodinámica</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Vertido Controlado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Fundición suave al baño maría y vertido manual a temperatura exacta para evitar grietas o emulsiones imperfectas.
+            </p>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between text-outline-variant">
+<span class="text-xs tracking-wider uppercase font-label-sm">54°C Constantes</span>
+<span class="material-symbols-outlined text-lg">device_thermostat</span>
+</div>
+</div>
+<!-- Paso 3 -->
+<div class="bg-surface p-space-md rounded-xl shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-300">
+<div>
+<div class="w-full h-44 rounded-lg overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Rows of finished artisanal soy candles in amber jars curing in rows on rustic wooden curing shelves inside a serene quiet workshop. Soft filtered afternoon daylight illuminating the pristine smooth creamy wax tops. Atmosphere of tranquility and patient craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8wWRHz2mHmCyuqgnUECL6XR0gkcDD3UwraqHRUFNp5ZP561ZtQLl9revoJoD6gluN3XFmWhNQpuvC6rPqN1E_HmexJK3LdWYUxHJ3AbQo9m8OeaUeqh83ileRX6As23zBsp8ENGrpDIizzVJL1lAzLgpN_yRUW9X3acTnFEQDu9tV45Jd3zFGg6tF0Ydir_N7PXxyd0bypvBKz5PwNhWRF8bjELxyv3Sdip4C8exAgekGFGWOMk2r"/>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded-full bg-surface-container text-primary font-bold">Paso 03</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">72 Horas</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Curado Natural</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Solidificación pausada en reposo oscuro. La cera cristaliza despacio permitiendo la fijación permanente del aroma.
+            </p>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between text-outline-variant">
+<span class="text-xs tracking-wider uppercase font-label-sm">Reposo en Penumbra</span>
+<span class="material-symbols-outlined text-lg">hotel</span>
+</div>
+</div>
+<!-- Paso 4 -->
+<div class="bg-surface p-space-md rounded-xl shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-300">
+<div>
+<div class="w-full h-44 rounded-lg overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artisan hands carefully pressing a bespoke wax seal stamp onto handmade textured kraft paper box tied with raw jute twine. Candle jar standing gracefully beside with an elegant cotton label. Warm ambient lighting, luxury tactile stationery aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMgRN8C8UY4AcYsti7nzpl-Du4hvtmgzl0Bk7h-qeHkJ7jI7ntcROXxF5FTvjskdJkdBqNsaccFjbTIAlcKjlWPIsHldtOK3j5hPIEip75HkN3Oxm1qFbFvywBK1LPNeY45La9E0dNI4X4E8cvUgLYMpejm2PaCu9N9sp7Ho1RWXs4aOWugWcq-AJ9hTWG7tFu9YIw0p3150B5HWg1zxhg_XTkDM97du0w99tUaJ3SI5H3ltUWWeHj"/>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded-full bg-surface-container text-primary font-bold">Paso 04</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Inspección Final</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Sellado con Lacre</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Revisión visual de cada superficie, corte de mecha a 5 mm y sellado artesanal con lacre vegetal antes del envío.
+            </p>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between text-outline-variant">
+<span class="text-xs tracking-wider uppercase font-label-sm">Certificado de Lote</span>
+<span class="material-symbols-outlined text-lg">verified</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mensaje de la Fundadora & Firma Íntima -->
+<section class="w-full bg-surface px-margin-mobile lg:px-margin py-space-xl lg:py-28">
+<div class="max-w-5xl mx-auto bg-surface-container-low rounded-xl p-space-lg lg:p-space-xl shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<!-- Retrato Fundadora -->
+<div class="md:col-span-5 flex justify-center">
+<div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-xl overflow-hidden shadow-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Intimate, warm, artistic portrait of Elena Marti, founder of Vesta, sitting in her candle workshop bathed in soft diffused sunlight. She is dressed in an oatmeal linen apron, holding a terracotta vessel with a calm, mindful smile. Background showcases minimal wooden workbenches, glass flasks, and dried eucalyptus branches. Poetic high-end editorial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJAyjvaURcXw5a6i9UDs5_2ZsPDLBCM2PzlK7YnjnHAA2LFbhFVdq1w54cbAcfzXLrWV4eXP99R8JrchvXjRrAKtRniM0GABIAUNyLuu6Bldp6cmSSytAY-xoaYWMtHXe6yuVH5Gk-fTiBnfWthmCpNLOELsATrUpqVY6cb7DgPYOTS2xx5LAY5uGT-2cncmXfq-On8_52EB20vac-IxjHXvC_EUszkQLKiPoCDleOzpZMeGmg1iG7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/30 via-transparent to-transparent"></div>
+</div>
+</div>
+<!-- Texto y Carta de Elena -->
+<div class="md:col-span-7 flex flex-col justify-center">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-primary mb-space-xs">
+            Palabras de la Alquimista
+          </span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-space-md">
+            “Encender una vela no es un acto decorativo; es abrir un paréntesis en el bullicio del día.”
+          </h2>
+<div class="font-body-md text-body-md text-on-surface-variant font-light space-y-3 leading-relaxed mb-space-md">
+<p>
+              Creé Vesta porque sentía que nuestras vidas necesitaban un recordatorio tangible de lentitud. En un entorno saturado de notificaciones y urgencias artificiales, la llama de una vela nos devuelve a la respiración consciente y al presente.
+            </p>
+<p>
+              Espero con devoción que cada una de nuestras creaciones te regale ese instante sagrado de introspección al llegar a casa.
+            </p>
+</div>
+<!-- Firma Manuscrita Simulada & Nombre -->
+<div class="flex flex-col gap-1 mb-space-lg">
+<div class="font-headline-lg italic text-secondary text-2xl font-light tracking-wide">
+              Elena Martí
+            </div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">
+              Creadora &amp; Maestra de Taller en Vesta
+            </span>
+</div>
+<!-- Llamado a la Acción hacia el Catálogo -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm pt-space-xs">
+<a class="inline-flex items-center justify-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-md text-label-md uppercase tracking-wider px-space-lg py-space-sm rounded-lg transition-all shadow-sm hover:shadow-md" data-path="catalogo" href="#">
+<span>Conoce Nuestras Creaciones</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center font-label-md text-label-md uppercase tracking-wider px-space-md py-space-sm text-on-surface hover:text-primary transition-colors" data-path="contacto" href="#">
+              Escribir al Taller
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Declaración de Cierre / Cita Solemne -->
+<section class="w-full bg-surface-container-highest px-margin-mobile lg:px-margin py-space-xl text-center">
+<div class="max-w-3xl mx-auto flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-3xl mb-space-sm">local_fire_department</span>
+<p class="font-headline-md text-headline-md text-on-surface font-light leading-relaxed mb-space-sm">
+        “Que la calma habite los rincones que habitas.”
+      </p>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">
+        El Equipo de Vesta · Alquimia Soberana
+      </span>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_-1px_6px_rgba(43,38,35,0.02)]"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter pb-space-lg"><div class="md:col-span-4 flex flex-col gap-space-sm pr-0 md:pr-space-md"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm tracking-wider text-on-surface uppercase">VESTA</span><span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">· ATELIER</span></div><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Velas vertidas pacientemente en cera de soja pura y esencias botánicas, honrando el tiempo pausado, el recogimiento del hogar y el silencio consciente en cada ritual cotidiano.</p><span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest">Hecho a fuego lento · Grasse &amp; Madrid</span></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Explorar el Taller</span><div class="grid grid-cols-2 gap-space-xs"><div class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#">Inicio</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="manifiesto" href="#">Manifiesto</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="catalogo" href="#">Catálogo</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="pedidos" href="#">Pedidos especiales</a></div><div class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contacto" href="#">Contacto</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="preguntas-frecuentes" href="#">Preguntas frecuentes</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="guia-de-cuidado-de-velas" href="#">Guía de cuidado</a></div></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Suscríbete a nuestro ritual</span><p class="font-body-sm text-body-sm text-on-surface-variant">Reflexiones sobre vida sosegada, notas de taller y un 10% de cortesía en tu primera adquisición.</p><form class="flex flex-col sm:flex-row gap-space-xs mt-space-xs"><input class="bg-surface font-body-sm text-body-sm text-on-surface px-space-md py-space-xs rounded-lg placeholder-outline focus:outline-none focus:ring-1 focus:ring-primary flex-1" placeholder="Tu correo electrónico" required="" type="email"/><button class="bg-primary hover:bg-secondary text-on-primary hover:text-on-secondary font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-colors whitespace-nowrap" type="submit">Suscribir</button></form></div></div><div class="pt-space-md mt-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm text-center sm:text-left"><p class="font-body-sm text-body-sm text-outline">© 2024 VESTA · Hecho a mano con cera de soja 100% natural</p><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm text-outline hover:text-on-surface transition-colors" data-path="terminos-y-privacidad" href="#">Términos y Privacidad</a></div></div></div></footer></body></html>

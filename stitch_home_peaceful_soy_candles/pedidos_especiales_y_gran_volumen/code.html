@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-container-highest": "#ebe0db",
+        "surface-bright": "#fff8f5",
+        "tertiary-fixed": "#ffddb9",
+        "inverse-on-surface": "#f9efea",
+        "error-container": "#ffdad6",
+        "on-tertiary-fixed-variant": "#5a4227",
+        "inverse-primary": "#edbca2",
+        "on-secondary": "#ffffff",
+        "on-primary-fixed-variant": "#613f2b",
+        "secondary": "#7b5641",
+        "on-secondary-fixed": "#2e1505",
+        "surface-variant": "#ebe0db",
+        "on-surface-variant": "#50443e",
+        "secondary-fixed": "#ffdbc9",
+        "on-primary": "#ffffff",
+        "surface-dim": "#e2d8d3",
+        "outline": "#82746d",
+        "surface-container": "#f6ece7",
+        "on-tertiary": "#ffffff",
+        "outline-variant": "#d4c3bb",
+        "tertiary-fixed-dim": "#e3c19d",
+        "on-primary-container": "#fffaf9",
+        "on-secondary-fixed-variant": "#613f2b",
+        "surface": "#fff8f5",
+        "surface-tint": "#7b5641",
+        "error": "#ba1a1a",
+        "background": "#fff8f5",
+        "on-error-container": "#93000a",
+        "primary-fixed": "#ffdbc9",
+        "inverse-surface": "#352f2c",
+        "primary": "#78533e",
+        "secondary-fixed-dim": "#edbca2",
+        "on-surface": "#1f1b18",
+        "on-background": "#1f1b18",
+        "on-error": "#ffffff",
+        "on-primary-fixed": "#2e1505",
+        "on-tertiary-fixed": "#291802",
+        "tertiary-container": "#8b6f50",
+        "surface-container-low": "#fcf2ec",
+        "tertiary": "#70573a",
+        "primary-container": "#936b55",
+        "primary-fixed-dim": "#edbca2",
+        "surface-container-high": "#f0e6e1",
+        "secondary-container": "#ffcdb2",
+        "on-tertiary-container": "#fffaff",
+        "on-secondary-container": "#7a5540",
+        "surface-container-lowest": "#ffffff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "margin-mobile": "1.25rem",
+        "space-lg": "2.25rem",
+        "space-sm": "0.75rem",
+        "gutter-mobile": "1rem",
+        "space-xs": "0.375rem",
+        "space-md": "1.25rem",
+        "margin": "3rem",
+        "space-xl": "4rem",
+        "gutter": "1.5rem"
+      },
+      "fontFamily": {
+        "headline-lg": ["Playfair Display"],
+        "headline-lg-mobile": ["Playfair Display"],
+        "body-md": ["Plus Jakarta Sans"],
+        "display-lg-mobile": ["Playfair Display"],
+        "display-lg": ["Playfair Display"],
+        "body-sm": ["Plus Jakarta Sans"],
+        "label-sm": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"],
+        "body-lg": ["Plus Jakarta Sans"],
+        "headline-md": ["Playfair Display"],
+        "headline-sm": ["Playfair Display"]
+      },
+      "fontSize": {
+        "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+        "display-lg-mobile": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+        "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+        "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "600"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600"}],
+        "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+        "headline-md": ["26px", {"lineHeight": "34px", "letterSpacing": "0em", "fontWeight": "500"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,38,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-sm"><img alt="Vesta Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U_QEz4ZHk1IOgT8PDPcEMhcozPFBlQqLqvwCT9-ma4eZUli7TUYNCIqXdpEb4G8PQ9ix1Vn7Jh9hHL1gDwStBClxbPaQckaZYYKFKt1UpQJxJej-SSC5-Alr6n8X9FWkzaQUHOpiCc75vdXlYQ9FDOdcn7FgQvRrzPzKei_XGo5rySbaQM8mbyDGDblZuEFbbOZlANc1QeQy3FAeBsnM6QQrcKgZVD3dBe3p48iKg3scNvJ04Oi0uoNiE"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-wider text-on-surface uppercase">VESTA</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">VELAS ARTESANALES</span></div></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#">Inicio</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="manifiesto" href="#">Manifiesto</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="catalogo" href="#">Catálogo</a><a aria-current="page" class="uppercase tracking-wider transition-colors text-primary font-bold" data-path="pedidos" href="#">Pedidos</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="contacto" href="#">Contacto</a></nav><div class="flex items-center gap-space-md"><button aria-label="Buscar" class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="relative flex items-center justify-center"><button aria-label="Carrito de compra" class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center" type="button"><span class="material-symbols-outlined text-[20px]">local_mall</span></button><span class="absolute -top-1.5 -right-2 bg-primary text-on-primary font-label-sm text-label-sm px-1 rounded-full leading-none flex items-center justify-center min-w-[16px] h-4">0</span></div><a class="hidden sm:inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-all shadow-[0_2px_8px_rgba(120,83,62,0.12)]" data-path="catalogo" href="#">Comprar</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Cabecera Editorial & Introducción Poética -->
+<section class="relative w-full overflow-hidden px-margin-mobile lg:px-margin pt-space-lg pb-space-xl max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row items-start justify-between gap-gutter">
+<div class="flex flex-col max-w-2xl">
+<div class="inline-flex items-center gap-space-xs mb-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-primary">CREACIONES A MEDIDA</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface leading-tight mb-space-md">
+          Pedidos Especiales, Bodas y Gran Volumen
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Diseñamos experiencias olfativas únicas para tus momentos más significativos: detalles personalizados para bodas, celebraciones privadas, regalos corporativos conscientes y suministros para hoteles boutique o spas.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row lg:flex-col items-start gap-space-md bg-surface-container-low p-space-md rounded-xl max-w-sm w-full shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">spa</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface uppercase block tracking-wider">Cera 100% Soja Botánica</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Vertido artesanal a baja temperatura</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">verified</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface uppercase block tracking-wider">Papelería Artesanal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Papel de algodón, lacres y lino puro</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">all_inclusive</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface uppercase block tracking-wider">Identidad Olfativa</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fórmulas personalizadas de autor</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Imagen de Taller / Atmósfera Asimétrica -->
+<section class="w-full px-margin-mobile lg:px-margin mb-space-xl max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-8 relative">
+<div class="h-[380px] sm:h-[460px] w-full rounded-xl overflow-hidden shadow-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="An artisanal candle atelier workstation with amber glass jars, poured warm botanical soy wax, linen ribbons, wax seal stamps, dried botanical sprigs, softly diffused morning window light, warm earth tones, editorial slow living aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsd83Mf9har4CZWk4i2sFLpHSUR-5MLvGHOQF1IRWlGmbGeV_urGESeXMA1kPJ9BtE0iZNIvb09FXn19vZTjuiLK8VzitdK7-kEAQNzynmjDMYGLXl_tu-601NXVn-wjnfoWaLFNM1QZGcwvdtduQ4Fl-cTUiGFNdsl7HoB8EiSlnWg7agPc1k15_LwwXXz3tf6lK80q5tcle1CkEkmlhJexo0yQZwvZyX97po6ydT6ndLn1ZWd4w7"/>
+</div>
+<div class="absolute bottom-6 left-6 right-6 sm:right-auto bg-surface/90 backdrop-blur-md p-space-md rounded-lg shadow-sm max-w-md">
+<p class="font-headline-sm text-headline-sm text-on-surface italic">"Cada fuego encendido guarda la memoria de un instante compartido."</p>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-space-xs block">Taller Vesta · Cuaderno de Notas</span>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-high p-space-lg rounded-xl flex flex-col justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">TIEMPO Y DEDICACIÓN</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+            Cada tirada se formula y vierte en pequeños lotes controlados para asegurar una maceración óptima y una combustión limpia, sin residuos tóxicos ni parafinas.
+          </p>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">+18.000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-right">Velas encendidas en celebraciones</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">local_shipping</span>
+<span class="font-body-sm text-body-sm text-on-surface">Muestrario de cortesía enviado en 48h previo al compromiso final.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Modalidades de Encargo (Bento 3 Columnas) -->
+<section class="w-full px-margin-mobile lg:px-margin py-space-lg max-w-7xl mx-auto">
+<div class="text-center max-w-xl mx-auto mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs">NUESTRAS MODALIDADES</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Un formato para cada celebración</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Opción 1: Bodas -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="h-56 w-full rounded-lg overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Elegant rustic wedding favors, small frosted amber soy candles wrapped in soft raw linen ribbon with bespoke calligraphy name tag and terracotta wax stamp seal, warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0S_A5tCBa6oq2YOYZHhXI9GSi8rPWhdzioVFm_zlu3IiVoqvHLO8WKvXKhFHfxfzWUNbC3ZYEqbBElOxZXWJhNu-jJmwBpZC7GMWkF_OkZT0lM3RQMeBDsdd24TmyTjGHKj8gsd5h0LST23uIqfUY_gZF_vtj8wFy_Nvsh8bx9VQcaJ4bVwohq3dxh7DfOVN9aTgPUrX4w-hvX23k7yprRFMmOojXsDWqJWvXnJzYwMvXstP4MQ7C"/>
+</div>
+<div class="inline-block px-space-xs py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider mb-space-sm">
+            Lote Mínimo · 25 Uds.
+          </div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-xs">Bodas y Celebraciones Íntimas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+            Detalles delicados para tus invitados. Incluye caligrafía a mano personalizada en papel verjurado, cordón de lino natural o sellado botánico en lacre artesano.
+          </p>
+</div>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-sm">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+            Tipografía caligráfica y nombres grabados
+          </li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+            Elección entre 6 fragancias signature
+          </li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+            Envase de vidrio ámbar o cerámica cruda
+          </li>
+</ul>
+</div>
+<!-- Opción 2: Regalos Corporativos -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="h-56 w-full rounded-lg overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Sophisticated corporate gifting gift box with minimalist scented candle, unbleached cotton paper thank you note, natural cardboard luxury box, neutral warm studio aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwaC132xlZWToI8Nvf3eac7DayRNsHUFMXMW2XcCkhDFcc6J8QZBwD1dPFocaWw6MxyiTZTnMdj-e6j40grL4ECAvwrF4DIDyiQWrEuRRFVs0E8KTGEWLgLSIwBGylq0aQjH5m1qomueZqsq8lvRsxQES74zxsBsdPm5fbGTn3YRlbpDXeK2bwRm6PeQaAD6p69sRagNfKrluSyR_GTdND8JElvHlRh8rNyzU6EHpKxaLIrYrSFJEP"/>
+</div>
+<div class="inline-block px-space-xs py-1 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider mb-space-sm">
+            Lote Mínimo · 50 Uds.
+          </div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-xs">Regalos Corporativos &amp; Eventos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+            Regalos institucionales que transmiten sosiego y cuidado. Adaptamos sutilmente tu identidad de marca en empaques sobrios de papel de algodón y cajas recicladas de lujo.
+          </p>
+</div>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-sm">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+            Integración de isotipo discreto en relieve seco
+          </li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+            Tarjetas de gratitud en papel 100% algodón
+          </li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+            Envíos agrupados o directos a directivos
+          </li>
+</ul>
+</div>
+<!-- Opción 3: Proyectos a Medida -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="h-56 w-full rounded-lg overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Luxury boutique hotel interior with large three-wick bespoke artisanal ceramic candle, minimalist stone pedestal, soft architectural shadows, peaceful spa atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXERV7L6wbjUCsXV2px_fXM6BhEG6MczatTV8_Vp7fBLr7zxxSNhD0ADI92IBfTeB4XqTmRJ-X7jUQT1phpuFEPRYxalGZtBn0mvBHQ9VFuyNQgjZAUGxKA_9PBdCb8l2EgVOklunWhfojEwAUrkF4WzsKNSLhHGOcfzndYt3pI5tljMLncen1Rcb-1bUd1Ch825GbEumwrJ72Zan_49YRrAdQrA5-1k0bFZpo6P8CGpiggyUMOTtH"/>
+</div>
+<div class="inline-block px-space-xs py-1 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm uppercase tracking-wider mb-space-sm">
+            Alta Medida &amp; Hospedaje
+          </div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-xs">Proyectos a Medida y Hostelería</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+            Para hoteles boutique, firmas de interiorismo y spas. Desarrollo de esencias piramidales exclusivas, formatos XXL multimecha y recipientes en cerámica torneada.
+          </p>
+</div>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-sm">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+            Perfil olfativo patentado en exclusividad
+          </li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+            Alfarería artesanal por maestros ceramistas
+          </li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+            Reposiciones periódicas planificadas
+          </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Proceso Alquímico Interactivo (Barra de progreso visual) -->
+<section class="w-full px-margin-mobile lg:px-margin py-space-xl max-w-7xl mx-auto">
+<div class="bg-surface-container-high rounded-xl p-space-lg lg:p-space-xl">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-space-lg gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">EL CURSO DE LA CREACIÓN</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">Cómo cobra vida tu encargo</h2>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Acompañamiento cercano en cada fase</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md relative">
+<div class="bg-surface p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<span class="font-headline-md text-headline-md text-primary mb-space-xs">01</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Diálogo y Deseo</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Recibimos tus requerimientos, estética del evento y fecha límite para diseñar una memoria a medida.</p>
+</div>
+<div class="bg-surface p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<span class="font-headline-md text-headline-md text-primary mb-space-xs">02</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Cata de Fragancias</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Te enviamos una caja de cata sensorial con muestras en cera pura para que experimentes la alquimia en casa.</p>
+</div>
+<div class="bg-surface p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<span class="font-headline-md text-headline-md text-primary mb-space-xs">03</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Muestra de Etiquetado</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Validación digital y física de la caligrafía, acabados de lacre, lazos de lino y pruebas de packaging.</p>
+</div>
+<div class="bg-surface p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<span class="font-headline-md text-headline-md text-primary mb-space-xs">04</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Vertido y Entrega</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fundido lento en nuestro taller, reposo botánico y envío protegido con embalaje isotérmico y sostenible.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Formulario de Cotización con Estética Minimalista Warm Beige -->
+<section class="w-full px-margin-mobile lg:px-margin py-space-lg max-w-5xl mx-auto" id="formulario-solicitud">
+<div class="bg-surface-container-lowest p-space-lg sm:p-space-xl rounded-xl shadow-md">
+<div class="text-center max-w-lg mx-auto mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs">INICIEMOS LA CONVERSACIÓN</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Solicitar Propuesta y Muestras</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Completa este formulario y nos pondremos en contacto en un plazo máximo de 24-48 horas laborables con un dossier preliminar.
+        </p>
+</div>
+<form class="space-y-space-md" id="special-orders-form">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider" for="nombre">Nombre y Apellidos *</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-space-xs rounded-lg focus:outline-none focus:ring-1 focus:ring-primary placeholder-outline transition-all" id="nombre" name="nombre" placeholder="Ej. Sofía Mendoza" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider" for="email">Correo Electrónico *</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-space-xs rounded-lg focus:outline-none focus:ring-1 focus:ring-primary placeholder-outline transition-all" id="email" name="email" placeholder="sofia@ejemplo.com" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider" for="tipo_evento">Tipo de Evento u Ocasión *</label>
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-space-xs rounded-lg focus:outline-none focus:ring-1 focus:ring-primary transition-all" id="tipo_evento" name="tipo_evento" required="">
+<option disabled="" selected="" value="">Selecciona una opción</option>
+<option value="boda">Boda íntima o gran enlace</option>
+<option value="corporativo">Regalo Corporativo / Evento de Marca</option>
+<option value="privado">Celebración Privada / Aniversario</option>
+<option value="hosteleria">Hostelería, Hotel Boutique o Spa</option>
+<option value="reventa">Boutique multimarca / Reventa</option>
+<option value="otro">Otro encargo especial</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider" for="cantidad">Cantidad Estimada de Unidades *</label>
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-space-xs rounded-lg focus:outline-none focus:ring-1 focus:ring-primary transition-all" id="cantidad" name="cantidad" required="">
+<option disabled="" selected="" value="">Selecciona el volumen</option>
+<option value="25-50">25 a 50 unidades</option>
+<option value="50-100">50 a 100 unidades</option>
+<option value="100-300">100 a 300 unidades</option>
+<option value="mas-300">Más de 300 unidades (Gran tirada)</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider" for="fecha_entrega">Fecha Prevista de Entrega Requerida *</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-space-xs rounded-lg focus:outline-none focus:ring-1 focus:ring-primary transition-all" id="fecha_entrega" name="fecha_entrega" required="" type="date"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider" for="preferencia_aroma">Preferencia Olfativa Deseada</label>
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-space-xs rounded-lg focus:outline-none focus:ring-1 focus:ring-primary transition-all" id="preferencia_aroma" name="preferencia_aroma">
+<option value="amaderado">Amaderado &amp; Resinas (Cedro, vetiver, sándalo)</option>
+<option value="floral">Floral Relajante (Lavanda francesa, azahar, neroli)</option>
+<option value="citrico">Cítrico Fresco (Bergamota, higo silvestre, té verde)</option>
+<option value="a-medida">Creación de Fragancia a Medida (Exclusiva)</option>
+<option value="por-definir">Prefiero asesoramiento tras recibir muestras</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider" for="detalles">Detalles del Proyecto y Notas Adicionales</label>
+<textarea class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md p-space-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary placeholder-outline transition-all" id="detalles" name="detalles" placeholder="Cuéntanos más sobre el estilo deseado, colores de la papelería, dedicatorias especiales o cualquier detalle inspirador..." rows="4"></textarea>
+</div>
+<div class="p-space-md bg-surface-container rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary bg-surface" id="kit_muestras" name="kit_muestras" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer" for="kit_muestras">
+              Solicitar envío previo del <strong>Kit de 4 Muestras Olfativas en Cera</strong> a domicilio.
+            </label>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider hidden sm:inline">Incluido sin coste en el presupuesto</span>
+</div>
+<div class="pt-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">lock</span>
+<span>Tus datos son tratados de forma confidencial.</span>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-primary hover:bg-secondary text-on-primary font-label-md text-label-md uppercase tracking-wider px-space-lg py-space-sm rounded-lg transition-all shadow-md hover:shadow-lg" type="submit">
+<span>Solicitar Propuesta y Muestras de Aroma</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Mensaje de confirmación reactivo -->
+<div class="hidden mt-space-md p-space-md bg-surface-container-high text-on-surface rounded-lg text-center animate-fade-in" id="form-success">
+<span class="material-symbols-outlined text-primary text-[36px] mb-space-xs block">mark_email_read</span>
+<h4 class="font-headline-sm text-headline-sm mb-space-xs">Tu solicitud ha sido recibida con gratitud</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+          Estamos revisando las especificaciones de tu encargo. En breve te escribiremos para coordinar el dossier técnico y la dirección para el envío de muestras.
+        </p>
+</div>
+</div>
+</section>
+<!-- Preguntas Frecuentes sobre Pedidos de Gran Volumen (Acordeón interactivo) -->
+<section class="w-full px-margin-mobile lg:px-margin py-space-xl max-w-5xl mx-auto">
+<div class="text-center max-w-xl mx-auto mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs">RESOLVEMOS TUS DUDAS</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Preguntas Frecuentes sobre Gran Volumen</h2>
+</div>
+<div class="space-y-space-sm">
+<!-- FAQ 1 -->
+<div class="faq-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all cursor-pointer">
+<div class="flex items-center justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">¿Con cuánta antelación debo solicitar mi pedido?</h3>
+<span class="material-symbols-outlined text-on-surface-variant transform transition-transform faq-icon">expand_more</span>
+</div>
+<div class="faq-answer hidden mt-space-sm pt-space-xs text-on-surface-variant font-body-md text-body-md">
+          Recomendamos solicitar el encargo con un mínimo de <strong>4 a 6 semanas de antelación</strong>. Este plazo nos permite realizar las pruebas olfativas preliminares, obtener tu visto bueno en el diseño gráfico de las etiquetas y respetar los días de curado natural que exige la cera de soja pura antes de su embalaje. Para proyectos urgentes de menor escala, consúltanos para valorar disponibilidad de taller.
+        </div>
+</div>
+<!-- FAQ 2 -->
+<div class="faq-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all cursor-pointer">
+<div class="flex items-center justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">¿Puedo recibir muestras olfativas antes de confirmar el lote?</h3>
+<span class="material-symbols-outlined text-on-surface-variant transform transition-transform faq-icon">expand_more</span>
+</div>
+<div class="faq-answer hidden mt-space-sm pt-space-xs text-on-surface-variant font-body-md text-body-md">
+          Por supuesto. Consideramos imprescindible que experimentes los aromas en tu propio espacio. Tras recibir tu formulario de solicitud inicial, te enviamos un <strong>kit exclusivo con 4 muestras en cera</strong> y muestras físicas de papeles de algodón y cordeles para que puedas tomar una decisión sosegada.
+        </div>
+</div>
+<!-- FAQ 3 -->
+<div class="faq-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all cursor-pointer">
+<div class="flex items-center justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">¿Hacéis envíos a toda la península e islas?</h3>
+<span class="material-symbols-outlined text-on-surface-variant transform transition-transform faq-icon">expand_more</span>
+</div>
+<div class="faq-answer hidden mt-space-sm pt-space-xs text-on-surface-variant font-body-md text-body-md">
+          Sí, enviamos a toda España peninsular, Islas Baleares e Islas Canarias, así como a otros destinos europeos bajo consulta. Utilizamos un <strong>embalaje reforzado, térmicamente protegido y 100% libre de plásticos</strong>, con seguro de reposición inmediata ante cualquier contingencia en el transporte.
+        </div>
+</div>
+<!-- FAQ 4 -->
+<div class="faq-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all cursor-pointer">
+<div class="flex items-center justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">¿Existe posibilidad de envases personalizados en cerámica de autor?</h3>
+<span class="material-symbols-outlined text-on-surface-variant transform transition-transform faq-icon">expand_more</span>
+</div>
+<div class="faq-answer hidden mt-space-sm pt-space-xs text-on-surface-variant font-body-md text-body-md">
+          Sí. Colaboramos con talleres artesanos locales que tornean recipientes de gres y barro blanco con esmaltes naturales mate. Esta modalidad requiere un plazo de producción de 8 a 10 semanas y un lote mínimo de 50 piezas para asegurar la viabilidad de horneado.
+        </div>
+</div>
+</div>
+</section>
+<!-- Banner Editorial de Cierre / Contacto Directo -->
+<section class="w-full px-margin-mobile lg:px-margin mb-space-xl max-w-7xl mx-auto">
+<div class="bg-primary-container text-on-primary-container p-space-lg lg:p-space-xl rounded-xl shadow-md flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="max-w-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed block mb-space-xs">ATENCIÓN PERSONALIZADA</span>
+<h3 class="font-headline-lg text-headline-lg mb-space-xs">¿Tienes una idea específica o un formato singular?</h3>
+<p class="font-body-md text-body-md opacity-90">
+          Si prefieres conversar directamente con nuestra maestra cerera y perfumista, escríbenos directamente a taller@vestavelas.es o concierta una visita privada en nuestro espacio de trabajo.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-space-sm w-full md:w-auto">
+<a class="inline-flex items-center justify-center bg-surface hover:bg-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider px-space-lg py-space-sm rounded-lg transition-all shadow-sm" href="#formulario-solicitud">
+          Comenzar Encargo
+        </a>
+</div>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    // Manejo interactivo de FAQs (Acordeón)
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+        const isOpen = !answer.classList.contains('hidden');
+        
+        // Cerrar todos
+        faqItems.forEach(otherItem => {
+          otherItem.querySelector('.faq-answer').classList.add('hidden');
+          otherItem.querySelector('.faq-icon').classList.remove('rotate-180');
+        });
+
+        // Alternar el actual
+        if (!isOpen) {
+          answer.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+
+    // Envío del formulario
+    const form = document.getElementById('special-orders-form');
+    const successBox = document.getElementById('form-success');
+    if (form && successBox) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        form.classList.add('opacity-50', 'pointer-events-none');
+        setTimeout(() => {
+          form.classList.add('hidden');
+          successBox.classList.remove('hidden');
+          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 600);
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_-1px_6px_rgba(43,38,35,0.02)]"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter pb-space-lg"><div class="md:col-span-4 flex flex-col gap-space-sm pr-0 md:pr-space-md"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm tracking-wider text-on-surface uppercase">VESTA</span><span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">· ATELIER</span></div><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Velas vertidas pacientemente en cera de soja pura y esencias botánicas, honrando el tiempo pausado, el recogimiento del hogar y el silencio consciente en cada ritual cotidiano.</p><span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest">Hecho a fuego lento · Grasse &amp; Madrid</span></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Explorar el Taller</span><div class="grid grid-cols-2 gap-space-xs"><div class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#">Inicio</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="manifiesto" href="#">Manifiesto</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="catalogo" href="#">Catálogo</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="pedidos" href="#">Pedidos especiales</a></div><div class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contacto" href="#">Contacto</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="preguntas-frecuentes" href="#">Preguntas frecuentes</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="guia-de-cuidado-de-velas" href="#">Guía de cuidado</a></div></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Suscríbete a nuestro ritual</span><p class="font-body-sm text-body-sm text-on-surface-variant">Reflexiones sobre vida sosegada, notas de taller y un 10% de cortesía en tu primera adquisición.</p><form class="flex flex-col sm:flex-row gap-space-xs mt-space-xs"><input class="bg-surface font-body-sm text-body-sm text-on-surface px-space-md py-space-xs rounded-lg placeholder-outline focus:outline-none focus:ring-1 focus:ring-primary flex-1" placeholder="Tu correo electrónico" required="" type="email"/><button class="bg-primary hover:bg-secondary text-on-primary hover:text-on-secondary font-label-md text-label-md uppercase tracking-wider px-space-md py-space-xs rounded-lg transition-colors whitespace-nowrap" type="submit">Suscribir</button></form></div></div><div class="pt-space-md mt-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm text-center sm:text-left"><p class="font-body-sm text-body-sm text-outline">© 2024 VESTA · Hecho a mano con cera de soja 100% natural</p><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm text-outline hover:text-on-surface transition-colors" data-path="terminos-y-privacidad" href="#">Términos y Privacidad</a></div></div></div></footer></body></html>
