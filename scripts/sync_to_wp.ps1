@@ -1,7 +1,9 @@
 # Script de sincronización con WordPress (lumina.pagify.es)
 param (
     [string]$SiteUrl = "https://lumina.pagify.es",
-    [string]$Token = ""
+    [string]$Token = "",
+    [string]$Username = "",
+    [string]$AppPassword = ""
 )
 
 $headers = @{
@@ -10,6 +12,9 @@ $headers = @{
 
 if ($Token) {
     $headers["Authorization"] = "Bearer $Token"
+} elseif ($Username -and $AppPassword) {
+    $base64Auth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("${Username}:${AppPassword}"))
+    $headers["Authorization"] = "Basic $base64Auth"
 }
 
 $pages = @(
