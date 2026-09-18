@@ -38,6 +38,7 @@ stitch_home_peaceful_soy_candles/
 ├── pages/                          # Código nativo Gutenberg / Blocksy
 │   ├── inicio.html                 # Página Principal (Hero, Filosofía, Colección, Testimonios)
 │   ├── catalogo.html               # Catálogo Completo (Filtros, 6 Fichas Botánicas, Guía)
+│   ├── velas-de-arena.html         # Velas de Arena / Cera Perlada (Ritual 4 Pasos, 4 Sets, FAQ)
 │   ├── manifiesto.html             # Manifiesto & Historia (Pilares, Alquimia viva, Firma)
 │   └── pedidos-especiales.html     # Pedidos Especiales, Bodas & Gran Volumen (+ Formulario)
 ├── stitch_home_peaceful_soy_candles/ # Archivos fuente originales de Stitch
@@ -71,7 +72,15 @@ stitch_home_peaceful_soy_candles/
    - 6 Fórmulas Botánicas completas con notas olfativas, gramajes y precios.
    - Guía de 4 pasos para el ritual de cuidado y reposo de la vela.
 
-3. **Manifiesto (`pages/manifiesto.html`):**
+3. **Velas de Arena (`pages/velas-de-arena.html`):**
+   - Hero asimétrico ("Velas de Arena, el fuego que renace") con métricas clave (Cero Residuo, Sin Fundir, Autoextinguible).
+   - Bento Grid de los 4 Pilares (Segunda vida a tus vasijas, Vela siempre impecable, Seguridad autoextinguible y Aroma libre).
+   - Infografía didáctica del Ritual en 4 pasos (Vasija, Vierte, Inserta mecha, Prende y renueva).
+   - Colección de 4 formatos y sets de taller (Arena natural neutra 500g, Arena infusionada con salvia 500g, Set Ritual Atelier con cuenco artesanal, y Recarga granel kraft 1.000g).
+   - Manifiesto wabi-sabi y Bento Grid de Preguntas Frecuentes (FAQ).
+   - Banner de llamada a la acción con enlaces al atelier y catálogo.
+
+4. **Manifiesto (`pages/manifiesto.html`):**
    - Prólogo contemplativo con icono sagrado de llama viva.
    - Narrativa del origen del taller (invierno de 2021) y rechazo a las parafinas derivadas del petróleo.
    - Placa técnica de vertido a 54.2°C.
