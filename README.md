@@ -59,17 +59,19 @@ stitch_home_peaceful_soy_candles/
 ## 📑 Páginas Implementadas
 
 1. **Inicio (`pages/inicio.html`):**
-   - Hero editorial con badge "Alquimia Botánica & Sosiego", botones hacia colección y manifiesto, insignias de compromiso artesano y tarjeta flotante asimétrica.
+   - Hero editorial con badge "Alquimia Botánica & Sosiego", botones duales hacia catálogo y Velas de Arena, e insignias de compromiso artesano.
    - 3 Bento Cards sensoriales ("Pureza de Origen", "Notas Botánicas", "Vaciado Lento").
-   - Colección Esencial con 3 creaciones insignia.
+   - Colección Esencial con 3 creaciones insignia en vaso de vidrio/cerámica.
+   - Showcase destacado: **"Velas de Arena: La Magia de Crear sin Molde"** con pilares (soja botánica, gotas concentradas, cero desperdicio/wax melts) y botones de acción.
    - Cita contemplativa del Manifiesto VESTA.
    - Ecos de Nuestro Santuario (3 testimonios verificados con puntuación).
-   - Banner final de invitación con cerillas de madera natural.
+   - Banner final de invitación con doble enlace a catálogo y velas de arena.
 
 2. **Catálogo (`pages/catalogo.html`):**
    - Métricas de taller (45-75h de combustión lenta, pabilo de algodón puro).
    - Pestañas de filtrado de colección ("Serie Serenidad", "Serie Bosque & Tierra", "Serie Cítrica", "Ediciones de Estación").
    - 6 Fórmulas Botánicas completas con notas olfativas, gramajes y precios.
+   - Banner de descubrimiento: **"Velas de Arena & Gotas Botánicas"** con enlaces cruzados hacia `/velas-de-arena/` y granel para eventos.
    - Guía de 4 pasos para el ritual de cuidado y reposo de la vela.
 
 3. **Velas de Arena (`pages/velas-de-arena.html`):**
@@ -77,7 +79,9 @@ stitch_home_peaceful_soy_candles/
    - Bento Grid de los 4 Pilares (Segunda vida a tus vasijas, Vela siempre impecable, Seguridad autoextinguible y Aroma libre).
    - Infografía didáctica del Ritual en 4 pasos (Vasija, Vierte, Inserta mecha, Prende y renueva).
    - Colección de 4 formatos y sets de taller (Arena natural neutra 500g, Arena infusionada con salvia 500g, Set Ritual Atelier con cuenco artesanal, y Recarga granel kraft 1.000g).
-   - Manifiesto wabi-sabi y Bento Grid de Preguntas Frecuentes (FAQ).
+   - Sección de **Goteros Botánicos VESTA Drops (15ml)** para aromatizar las microperlas de cera neutra.
+   - Sección de **Centros de Mesa Multimecha para Eventos & Celebraciones** enlazando con Pedidos Especiales.
+   - Manifiesto wabi-sabi y Bento Grid de Preguntas Frecuentes enriquecido (combustión óptima de 2-3h, segunda vida en quemadores como *wax melts* y seguridad anti-vuelco).
    - Banner de llamada a la acción con enlaces al atelier y catálogo.
 
 4. **Manifiesto (`pages/manifiesto.html`):**
@@ -87,10 +91,11 @@ stitch_home_peaceful_soy_candles/
    - Bento Grid con los 5 Principios Fundacionales innegociables.
    - Cierre con caligrafía y lema: *"Hecho a fuego lento"*.
 
-4. **Pedidos Especiales (`pages/pedidos-especiales.html`):**
+5. **Pedidos Especiales (`pages/pedidos-especiales.html`):**
    - Modalidades: Bodas & Enlaces Íntimos (lote mínimo 25 uds), Regalos Corporativos (lote mínimo 50 uds) y Hostelería/Spas.
+   - Sección destacada: **"Centros de Mesa Efímeros & Cera de Arena a Granel"** para *wedding planners*, interioristas y floristas (suministro en sacos de 5 kg y 10 kg con mechas continuas).
    - Proceso de creación en 4 fases (Diálogo, Cata olfativa a domicilio, Muestras con lacre, Vertido y entrega).
-   - Formulario de solicitud y presupuesto con opción de Kit de 4 Muestras Olfativas en cera de cortesía.
+   - Formulario de solicitud y presupuesto con opciones añadidas para cera a granel y centros para eventos.
 
 ---
 
