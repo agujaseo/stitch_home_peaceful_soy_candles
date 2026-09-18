@@ -99,12 +99,25 @@ stitch_home_peaceful_soy_candles/
 
 ---
 
+## 🛒 Sistema de Bolsa de Encargo Artesanal (Sin WooCommerce)
+
+Para respetar la esencia de taller de autor y evitar la sobrecarga de pasarelas bancarias y pasarelas de pago automatizadas, VESTA cuenta con un sistema propio de **Bolsa de Encargo**:
+
+1. **Botón Flotante Permanente (`#vesta-cart-pill`):** Muestra el conteo de artículos y el total acumulado en tiempo real desde la esquina inferior derecha.
+2. **Cajón Lateral Deslizante (*Cart Drawer*):** Se abre al hacer clic en cualquier botón de producto («Añadir al Encargo») o sobre el botón flotante. Permite revisar fotos, formatos, precios, ajustar cantidades (`+`/`-`) o eliminar piezas.
+3. **Formalización del Encargo:** El cliente introduce sus datos de contacto y envío directamente dentro del cajón.
+4. **Recepción en Fluent Forms & Correo:** Se procesa a través del formulario **«Encargos del Taller VESTA»** (ID: 3). La entrada queda registrada en el panel de WordPress y se remite un correo automático a la artesana con el desglose del encargo.
+5. **Cierre Fuera de la Plataforma:** La artesana contacta personalmente al cliente (email o teléfono/WhatsApp) para confirmar la maceración y facilitar los datos de Bizum o transferencia. Además, el cliente dispone de un botón opcional para abrir el resumen directamente en WhatsApp con un solo clic.
+6. **Inyección Global:** Implementado mediante un Blocksy Content Block (`ct_content_block` ID: 24, gancho `blocksy:footer:before`, condición `everywhere`). Plantilla disponible en `templates/cart-drawer.html`.
+
+---
+
 ## 🛠️ Stack Tecnológico
 
 - **WordPress:** 6.x / 7.x
 - **Tema:** Blocksy + Blocksy Companion Premium
 - **Editor:** Gutenberg Nativo (Bloques modulares, 100% editables)
-- **Formularios:** Fluent Forms
+- **Formularios & Pedidos:** Fluent Forms
 - **SEO:** Rank Math
 - **Herramientas IA / MCP:** Novamira PRO
 

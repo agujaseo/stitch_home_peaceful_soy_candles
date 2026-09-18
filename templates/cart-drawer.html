@@ -1,0 +1,825 @@
+﻿<!-- wp:html -->
+<style>
+/* VESTA Cart Drawer & Floating Pill */
+#vesta-cart-pill {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99990;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--wp--preset--color--palette-color-1, #936B55);
+  color: #FAF8F5;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 28px -6px rgba(43,38,35,0.3);
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+#vesta-cart-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -6px rgba(43,38,35,0.4);
+  background: var(--wp--preset--color--palette-color-2, #78533E);
+}
+#vesta-cart-pill .pill-count {
+  background: rgba(255,255,255,0.22);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+}
+#vesta-cart-pill .pill-total {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-left: 1px solid rgba(255,255,255,0.25);
+  padding-left: 8px;
+}
+
+/* Backdrop */
+#vesta-cart-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(31,27,24,0.45);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 99998;
+}
+#vesta-cart-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Drawer */
+#vesta-cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 440px;
+  background: var(--wp--preset--color--palette-color-7, #FFF8F5);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 99999;
+  box-shadow: -12px 0 36px rgba(43,38,35,0.16);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+}
+#vesta-cart-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* Header */
+.vcd-header {
+  padding: 24px 24px 18px 24px;
+  background: var(--wp--preset--color--palette-color-8, #FFFFFF);
+  border-bottom: 1px solid var(--wp--preset--color--palette-color-5, #EAE3D9);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.vcd-header-titles p {
+  margin: 0 0 4px 0;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wp--preset--color--palette-color-1, #936B55);
+  font-weight: 600;
+}
+.vcd-header-titles h3 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+}
+.vcd-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--wp--preset--color--palette-color-3, #2B2623);
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.vcd-close-btn:hover {
+  background: var(--wp--preset--color--palette-color-6, #F4EFEA);
+}
+
+/* Body */
+.vcd-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Item Card */
+.vcd-item {
+  display: flex;
+  gap: 14px;
+  background: var(--wp--preset--color--palette-color-8, #FFFFFF);
+  border: 1px solid var(--wp--preset--color--palette-color-5, #EAE3D9);
+  border-radius: 10px;
+  padding: 12px;
+  align-items: center;
+}
+.vcd-item-img {
+  width: 54px;
+  height: 54px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--wp--preset--color--palette-color-6, #F4EFEA);
+  flex-shrink: 0;
+}
+.vcd-item-info {
+  flex: 1;
+  min-width: 0;
+}
+.vcd-item-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vcd-item-format {
+  font-size: 11px;
+  color: var(--wp--preset--color--palette-color-2, #78533E);
+  margin: 0 0 6px 0;
+}
+.vcd-item-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.vcd-item-price {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+}
+.vcd-qty-controls {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--wp--preset--color--palette-color-5, #EAE3D9);
+  border-radius: 6px;
+  background: var(--wp--preset--color--palette-color-7, #FFF8F5);
+  overflow: hidden;
+}
+.vcd-qty-btn {
+  background: none;
+  border: none;
+  width: 26px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.vcd-qty-btn:hover {
+  background: var(--wp--preset--color--palette-color-5, #EAE3D9);
+}
+.vcd-qty-val {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 6px;
+}
+.vcd-item-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #99877E;
+  font-size: 14px;
+  padding: 4px;
+  margin-left: 6px;
+  transition: color 0.2s;
+}
+.vcd-item-remove:hover {
+  color: #C2410C;
+}
+
+/* Empty State */
+.vcd-empty {
+  text-align: center;
+  padding: 48px 20px;
+}
+.vcd-empty-icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+  display: block;
+}
+.vcd-empty h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin: 0 0 8px 0;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+}
+.vcd-empty p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--wp--preset--color--palette-color-3, #2B2623);
+  margin: 0 0 20px 0;
+}
+
+/* Notice Box */
+.vcd-notice {
+  background: var(--wp--preset--color--palette-color-6, #F4EFEA);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--wp--preset--color--palette-color-3, #2B2623);
+  border-left: 3px solid var(--wp--preset--color--palette-color-1, #936B55);
+}
+
+/* Order Form */
+.vcd-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--wp--preset--color--palette-color-5, #EAE3D9);
+}
+.vcd-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  margin: 0 0 4px 0;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+}
+.vcd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.vcd-field label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+}
+.vcd-field input, .vcd-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 12px;
+  border: 1px solid var(--wp--preset--color--palette-color-5, #EAE3D9);
+  border-radius: 6px;
+  background: var(--wp--preset--color--palette-color-8, #FFFFFF);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.vcd-field input:focus, .vcd-field textarea:focus {
+  border-color: var(--wp--preset--color--palette-color-1, #936B55);
+}
+
+/* Footer / Actions */
+.vcd-footer {
+  padding: 18px 24px;
+  background: var(--wp--preset--color--palette-color-8, #FFFFFF);
+  border-top: 1px solid var(--wp--preset--color--palette-color-5, #EAE3D9);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.vcd-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.vcd-total-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--wp--preset--color--palette-color-2, #78533E);
+}
+.vcd-total-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+  font-weight: 500;
+}
+.vcd-submit-btn {
+  background: var(--wp--preset--color--palette-color-1, #936B55);
+  color: #FAF8F5;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 6px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.vcd-submit-btn:hover {
+  background: var(--wp--preset--color--palette-color-2, #78533E);
+}
+.vcd-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Success Screen */
+.vcd-success {
+  text-align: center;
+  padding: 40px 20px;
+}
+.vcd-success-icon {
+  font-size: 46px;
+  margin-bottom: 12px;
+  display: block;
+}
+.vcd-success h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+  margin: 0 0 10px 0;
+}
+.vcd-success p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--wp--preset--color--palette-color-3, #2B2623);
+  margin: 0 0 20px 0;
+}
+.vcd-whatsapp-btn {
+  background: #25D366;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  transition: opacity 0.2s;
+}
+.vcd-whatsapp-btn:hover {
+  opacity: 0.9;
+}
+.vcd-secondary-btn {
+  background: var(--wp--preset--color--palette-color-6, #F4EFEA);
+  color: var(--wp--preset--color--palette-color-4, #1F1B18);
+  border: 1px solid var(--wp--preset--color--palette-color-5, #EAE3D9);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Toast notification */
+#vesta-toast {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  background: var(--wp--preset--color--palette-color-4, #1F1B18);
+  color: #FAF8F5;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 99995;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+#vesta-toast.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<!-- Floating Pill -->
+<a id="vesta-cart-pill" href="#abrir-encargo" title="Ver Bolsa de Encargo">
+  <span>🧺 Tu Encargo</span>
+  <span class="pill-count" id="vcd-pill-count">0</span>
+  <span class="pill-total" id="vcd-pill-total">0,00 €</span>
+</a>
+
+<!-- Toast -->
+<div id="vesta-toast">✨ Añadido a tu encargo</div>
+
+<!-- Backdrop -->
+<div id="vesta-cart-backdrop"></div>
+
+<!-- Drawer Container -->
+<div id="vesta-cart-drawer">
+  <!-- Header -->
+  <div class="vcd-header">
+    <div class="vcd-header-titles">
+      <p>VESTA Atelier · Pedidos</p>
+      <h3>Bolsa de Encargo</h3>
+    </div>
+    <button type="button" class="vcd-close-btn" id="vcd-close-btn" aria-label="Cerrar">&times;</button>
+  </div>
+
+  <!-- Body -->
+  <div class="vcd-body" id="vcd-body">
+    <!-- Rendered dynamically by JS -->
+  </div>
+
+  <!-- Footer -->
+  <div class="vcd-footer" id="vcd-footer" style="display:none;">
+    <div class="vcd-total-row">
+      <span class="vcd-total-label">Total Estimado</span>
+      <span class="vcd-total-val" id="vcd-total-amount">0,00 €</span>
+    </div>
+    <button type="button" class="vcd-submit-btn" id="vcd-submit-btn">
+      <span>Enviar Encargo al Taller &rarr;</span>
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const STORAGE_KEY = 'vesta_atelier_cart';
+  const FORM_ID = 3;
+
+  function getCart() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    } catch(e) {
+      return [];
+    }
+  }
+
+  function saveCart(cart) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    updatePill();
+  }
+
+  function formatMoney(amount) {
+    return amount.toFixed(2).replace('.', ',') + ' €';
+  }
+
+  function getCartTotal(cart) {
+    return cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  }
+
+  function getCartCount(cart) {
+    return cart.reduce((sum, item) => sum + item.qty, 0);
+  }
+
+  function updatePill() {
+    const cart = getCart();
+    const count = getCartCount(cart);
+    const total = getCartTotal(cart);
+    const pillCount = document.getElementById('vcd-pill-count');
+    const pillTotal = document.getElementById('vcd-pill-total');
+    if (pillCount) pillCount.textContent = count;
+    if (pillTotal) pillTotal.textContent = formatMoney(total);
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('vesta-toast');
+    if (!toast) return;
+    toast.textContent = msg || '✨ Añadido a tu encargo';
+    toast.classList.add('is-active');
+    setTimeout(() => toast.classList.remove('is-active'), 2500);
+  }
+
+  function openDrawer() {
+    renderBody();
+    document.getElementById('vesta-cart-drawer')?.classList.add('is-open');
+    document.getElementById('vesta-cart-backdrop')?.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    document.getElementById('vesta-cart-drawer')?.classList.remove('is-open');
+    document.getElementById('vesta-cart-backdrop')?.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  function addItem(product) {
+    const cart = getCart();
+    const existing = cart.find(i => i.id === product.id);
+    if (existing) {
+      existing.qty += (product.qty || 1);
+    } else {
+      cart.push({
+        id: product.id,
+        title: product.title,
+        price: parseFloat(product.price),
+        format: product.format || '',
+        image: product.image || '',
+        qty: product.qty || 1
+      });
+    }
+    saveCart(cart);
+    showToast('✨ Añadido: ' + product.title);
+    openDrawer();
+  }
+
+  function updateItemQty(id, delta) {
+    const cart = getCart();
+    const item = cart.find(i => i.id === id);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) {
+      const idx = cart.indexOf(item);
+      cart.splice(idx, 1);
+    }
+    saveCart(cart);
+    renderBody();
+  }
+
+  function removeItem(id) {
+    let cart = getCart();
+    cart = cart.filter(i => i.id !== id);
+    saveCart(cart);
+    renderBody();
+  }
+
+  function renderBody() {
+    const body = document.getElementById('vcd-body');
+    const footer = document.getElementById('vcd-footer');
+    const totalAmount = document.getElementById('vcd-total-amount');
+    if (!body) return;
+
+    const cart = getCart();
+
+    if (cart.length === 0) {
+      if (footer) footer.style.display = 'none';
+      body.innerHTML = `
+        <div class="vcd-empty">
+          <span class="vcd-empty-icon">🕯️</span>
+          <h4>Tu bolsa de encargo está vacía</h4>
+          <p>Explora nuestras velas botánicas vertidas a mano o la cera de arena para comenzar tu encargo.</p>
+          <a href="/catalogo/" class="vcd-submit-btn" style="text-decoration:none;display:inline-block;padding:10px 20px;">Descubrir Catálogo</a>
+        </div>
+      `;
+      return;
+    }
+
+    if (footer) footer.style.display = 'flex';
+    const total = getCartTotal(cart);
+    if (totalAmount) totalAmount.textContent = formatMoney(total);
+
+    let html = '';
+
+    // Items list
+    cart.forEach(item => {
+      html += `
+        <div class="vcd-item">
+          ${item.image ? `<img src="${item.image}" alt="${item.title}" class="vcd-item-img" />` : `<div class="vcd-item-img" style="display:flex;align-items:center;justify-content:center;font-size:20px;">🕯️</div>`}
+          <div class="vcd-item-info">
+            <h4 class="vcd-item-title">${item.title}</h4>
+            <p class="vcd-item-format">${item.format || 'Edición de Taller'}</p>
+            <div class="vcd-item-bottom">
+              <span class="vcd-item-price">${formatMoney(item.price * item.qty)}</span>
+              <div class="vcd-qty-controls">
+                <button type="button" class="vcd-qty-btn" onclick="window.vestaCart.changeQty('${item.id}', -1)">&minus;</button>
+                <span class="vcd-qty-val">${item.qty}</span>
+                <button type="button" class="vcd-qty-btn" onclick="window.vestaCart.changeQty('${item.id}', 1)">&plus;</button>
+              </div>
+              <button type="button" class="vcd-item-remove" onclick="window.vestaCart.remove('${item.id}')" title="Eliminar">&times;</button>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    // Artisan Slow Notice
+    html += `
+      <div class="vcd-notice">
+        🌿 <strong>Elaboración Pausada:</strong> Cada vela se vierte en pequeños lotes numerados. Al enviar tu encargo, la artesana se pondrá en contacto contigo para confirmar el plazo de reposo y facilitarte los datos de pago (Bizum o transferencia).
+      </div>
+    `;
+
+    // Customer info form
+    html += `
+      <form class="vcd-form" id="vcd-order-form" onsubmit="return false;">
+        <h4 class="vcd-form-title">Tus Datos para Coordinar el Encargo</h4>
+        <div class="vcd-field">
+          <label>Nombre y Apellidos *</label>
+          <input type="text" id="vcd-name" required placeholder="Ej. Clara Larrea" />
+        </div>
+        <div class="vcd-field">
+          <label>Correo Electrónico *</label>
+          <input type="email" id="vcd-email" required placeholder="clara@ejemplo.com" />
+        </div>
+        <div class="vcd-field">
+          <label>Teléfono / WhatsApp *</label>
+          <input type="tel" id="vcd-phone" required placeholder="+34 600 000 000" />
+        </div>
+        <div class="vcd-field">
+          <label>Dirección y Ciudad de Envío</label>
+          <textarea id="vcd-address" rows="2" placeholder="Calle, número, código postal y localidad..."></textarea>
+        </div>
+        <div class="vcd-field">
+          <label>Notas o Dedicatoria para Regalo</label>
+          <textarea id="vcd-notes" rows="2" placeholder="Dedicatoria personalizada en papel de algodón o notas de entrega..."></textarea>
+        </div>
+      </form>
+    `;
+
+    body.innerHTML = html;
+  }
+
+  async function handleOrderSubmit() {
+    const cart = getCart();
+    if (cart.length === 0) return;
+
+    const nameInput = document.getElementById('vcd-name');
+    const emailInput = document.getElementById('vcd-email');
+    const phoneInput = document.getElementById('vcd-phone');
+    const addressInput = document.getElementById('vcd-address');
+    const notesInput = document.getElementById('vcd-notes');
+    const submitBtn = document.getElementById('vcd-submit-btn');
+
+    if (!nameInput || !nameInput.value.trim()) {
+      alert('Por favor, introduce tu Nombre y Apellidos.');
+      nameInput?.focus();
+      return;
+    }
+    if (!emailInput || !emailInput.value.trim()) {
+      alert('Por favor, introduce tu Correo Electrónico.');
+      emailInput?.focus();
+      return;
+    }
+    if (!phoneInput || !phoneInput.value.trim()) {
+      alert('Por favor, introduce tu Teléfono o WhatsApp.');
+      phoneInput?.focus();
+      return;
+    }
+
+    // Build order summary string
+    let summaryText = '--- DETALLE DEL ENCARGO ---\n';
+    cart.forEach(item => {
+      summaryText += `${item.qty}x ${item.title} (${item.format || 'Taller'}) - ${formatMoney(item.price * item.qty)}\n`;
+    });
+    const total = getCartTotal(cart);
+    summaryText += `TOTAL ESTIMADO: ${formatMoney(total)}`;
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Enviando encargo...</span>';
+    }
+
+    try {
+      // POST directly to Fluent Forms AJAX endpoint
+      const params = new URLSearchParams();
+      params.append('action', 'fluentform_submit');
+      params.append('form_id', FORM_ID.toString());
+      
+      const formFields = new URLSearchParams();
+      formFields.append('names', nameInput.value.trim());
+      formFields.append('email', emailInput.value.trim());
+      formFields.append('phone', phoneInput.value.trim());
+      formFields.append('address', addressInput ? addressInput.value.trim() : '');
+      formFields.append('order_summary', summaryText);
+      formFields.append('notes', notesInput ? notesInput.value.trim() : '');
+
+      params.append('data', formFields.toString());
+
+      const res = await fetch('/wp-admin/admin-ajax.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString()
+      });
+
+      const json = await res.json();
+
+      if (json.success) {
+        // Success screen
+        const customerName = nameInput.value.trim();
+        const orderId = 'VSTA-' + Math.floor(1000 + Math.random() * 9000);
+        
+        // Prepare whatsapp text
+        const waText = encodeURIComponent(`Hola VESTA, acabo de tramitar mi encargo (#${orderId}) desde la web a nombre de ${customerName}.\n\n${summaryText}\n\nMe gustaría confirmar disponibilidad y coordinar el pago.`);
+        const waUrl = `https://wa.me/34600000000?text=${waText}`;
+
+        // Clear cart
+        localStorage.removeItem(STORAGE_KEY);
+        updatePill();
+
+        const footer = document.getElementById('vcd-footer');
+        if (footer) footer.style.display = 'none';
+
+        const body = document.getElementById('vcd-body');
+        if (body) {
+          body.innerHTML = `
+            <div class="vcd-success">
+              <span class="vcd-success-icon">✨</span>
+              <h3>¡Encargo Recibido!</h3>
+              <p>Muchas gracias, <strong>${customerName}</strong>. Hemos registrado tu encargo de taller bajo la referencia <strong>#${orderId}</strong>.</p>
+              <div class="vcd-notice" style="margin-bottom:20px;text-align:left;">
+                🕊️ La artesana revisará la disponibilidad de las esencias botánicas y contactará contigo en un plazo de 24 horas por email o WhatsApp para coordinar el plazo de vertido y el pago (Bizum o transferencia bancaria).
+              </div>
+              <a href="${waUrl}" target="_blank" rel="noopener" class="vcd-whatsapp-btn">
+                <span>💬 Abrir Resumen en WhatsApp</span>
+              </a>
+              <button type="button" class="vcd-secondary-btn" onclick="window.vestaCart.close()">Seguir Explorando el Atelier</button>
+            </div>
+          `;
+        }
+      } else {
+        alert('Hubo un inconveniente al enviar tu encargo. Por favor, revisa tus datos o contáctanos directamente.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Enviar Encargo al Taller &rarr;</span>';
+        }
+      }
+    } catch(err) {
+      console.error(err);
+      alert('Error de conexión al enviar el encargo. Por favor, inténtalo de nuevo.');
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Enviar Encargo al Taller &rarr;</span>';
+      }
+    }
+  }
+
+  // Global Cart API
+  window.vestaCart = {
+    add: addItem,
+    remove: removeItem,
+    changeQty: updateItemQty,
+    open: openDrawer,
+    close: closeDrawer
+  };
+
+  // Bind UI Events
+  document.addEventListener('DOMContentLoaded', function() {
+    updatePill();
+
+    document.getElementById('vesta-cart-pill')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      openDrawer();
+    });
+
+    document.getElementById('vcd-close-btn')?.addEventListener('click', closeDrawer);
+    document.getElementById('vesta-cart-backdrop')?.addEventListener('click', closeDrawer);
+    document.getElementById('vcd-submit-btn')?.addEventListener('click', handleOrderSubmit);
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeDrawer();
+    });
+
+    // Delegate add-to-cart clicks
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('.vesta-add-to-cart');
+      if (btn) {
+        e.preventDefault();
+        const product = {
+          id: btn.dataset.id || ('p-' + Math.random().toString(36).substr(2, 6)),
+          title: btn.dataset.title || 'Vela Artesanal VESTA',
+          price: parseFloat(btn.dataset.price) || 28.00,
+          format: btn.dataset.format || '',
+          image: btn.dataset.image || '',
+          qty: parseInt(btn.dataset.qty) || 1
+        };
+        addItem(product);
+      }
+    });
+  });
+
+  // Also run updatePill immediately
+  updatePill();
+})();
+</script>
+<!-- /wp:html -->
