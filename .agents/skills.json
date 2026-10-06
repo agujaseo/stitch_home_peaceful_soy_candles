@@ -1,0 +1,12 @@
+{
+  "inherits": [
+    {
+      "path": "~/.gemini/antigravity-global-config/skills"
+    }
+  ],
+  "entries": [
+    {
+      "path": ".agents/skills"
+    }
+  ]
+}
