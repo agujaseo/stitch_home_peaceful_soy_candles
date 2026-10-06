@@ -16,3 +16,9 @@ temp/
 .antigravity/
 scratch/
 Aguja/
+
+# Temporales de trabajo (no versionar)
+test.pdf
+check_alba_pages.json
+search_alba.json
+search_whatsapp.json
